@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <style>
+        .column {float: left;}
+        .marginL {width: 17%;}
+        .left {width: 23%;}
+        .middle {width: 20%;}
+        .right {width: 23%;}
+        .marginR {width: 17%;}
+        .row:after {content: ""; display: table; clear: both;}
+    </style>
+    <body style="text-align: center;">
+        <div class= "row" style = "text-align: center; color: grey;">
+            <div class="column marginL" style="background-color:white;"></div>
+            <div class="column left" style="background-color:white; border-bottom: 1px solid #00A69C;">
+            <a href="{% url 'accounts:login' %}" style="color:grey;"><b>Log in</b></a>
+            </div>
+            <div class="column middle" style="background-color:white;"></div>
+            <div class="column right" style="background-color:white; border-bottom: 1px solid #00A69C;">
+            <div class="column marginR" style="background-color:white;"></div>
+            <b>Sign up</b>
+            </div>
+        </div>
+        <br>
+
+
+
+        <!-- New sign-up system -->
+        <form method="post" action="{% url 'accounts:signup' %}">
+            {% csrf_token %}
+
+        <div style="text-align: left; margin-left: 20px; margin-right: -55px; font-family: 'Open Sans'; font-size: 14px; color: #828282;">
+            {% if messages %}
+            <ul style="color: #E10078;">
+                {% for message in messages %}
+                    <li>{{message}}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+
+            <label for="username">Username</label> <br>
+            <input  style="text-align:left;" type="text" placeholder="JohnDoe123" name="username" maxlength="150" autofocus="" required="" id="id_username">
+            <br><br>
+    
+            <label for="name">Name</label> <br>
+            <input style="width: 42%;" type="text" placeholder="First Name" name="first_name" id="first_name" required>
+            <input style="width: 42%;" type="text" placeholder="Last Name" name="last_name" id="last_name" required> <br><br>
+    
+            <label for="email">Email</label> <br>
+            <input type="text" placeholder="johndoe@gmail.com" name="email" id="email" required> <br><br>
+    
+            <!-- Phone Number
+            <label for="phoneNumber">Phone Number</label> <br>
+            <input type="text" placeholder="(123) 123 1234" name="phoneNumber" required> <br><br>
+            -->
+    
+            <label for="email">Password</label> <br>
+            <input type="password" name="password1" required="" id="id_password1">
+            <div style="font-size: 10px;"> Must contain at least 8 characters and include a number, letter, and symbol </div>
+            <br>
+    
+            <label for="email">Confirm Password</label> <br>
+            <input type="password" name="password2" required="" id="id_password2">
+    
+            <br><br>
+    
+            <div style="height:270px; width:400px; border:1px solid #ccc;">
+    
+                <div style="font-family: Open Sans; font-style: normal; font-weight: 600; font-size: 14px; color: #00A69C; 
+                margin-top: 15px; margin-left: 15px;">
+                    Terms & Agreements
+                </div>
+    
+                <div style="height:180px; width:380px; border:1px solid #ccc; overflow:auto; 
+                margin-left: 15px; margin-top: 15px; font-size: 12px;">
+                    <b>Introduction</b><br>
+                    Integrated Personalized Medicine (IPMD) Inc., a California Corporation located at 830 Stewart Dr. Suite 284, Sunnyvale, CA 94085 is organized under the laws of the State of California, USA, and operates under the laws of the USA.
+                    <br><br>
+                    At IPMD, accessible from http://www.ipmdinc.com/, one of our main priorities is the privacy of our visitors. This Privacy Policy document contains types of information that is collected and recorded by IPMD and how we use it.
+                    <br><br>
+                    If you have additional questions or require more information about our Privacy Policy, please do not hesitate to contact us.
+                    <br><br>
+                    This Privacy Policy applies only to our online activities and is valid for visitors to our website with regards to the information that they shared and/or collect in IPMD. This policy is not applicable to any information collected offline or via channels other than this website.
+                    <br><br>
+                    <b>Consent</b><br>
+                    By using our website, you hereby consent to our Privacy Policy and agree to its terms.
+                    <br><br>
+                    <b>Information we collect</b><br>
+                    The personal information that you are asked to provide, and the reasons why you are asked to provide it, will be made clear to you at the point we ask you to provide your personal information.
+                    <br><br>
+                    If you contact us directly, we may receive additional information about you such as your name, email address, phone number, the contents of the message and/or attachments you may send us, and any other information you may choose to provide.
+                    <br><br>
+                    When you register for an Account, we may ask for your contact information, including items such as name, address, email address, company name, and telephone number.
+                    <br><br>
+                    <b>How we use your information</b><br>
+                    We use the information we collect to provide, operate, and maintain our website; improve, personalize, and expand our website; understand and analyze how you use our website; develop new products, services, features, and functionality; communicate with you, either directly or through one of our partners, including for customer service, to provide you with updates and other information relating to the website, and for marketing and promotional purposes; send you emails; find and prevent fraud; log files.
+                    <br><br>
+                    IPMD follows a standard procedure of using log files. These files log visitors when they visit websites. All hosting companies do this and a part of hosting services' analytics. The information collected by log files may include internet protocol (IP) addresses, browser type, Internet Service Provider (ISP), date and time stamp, referring/exit pages, and possibly the number of clicks. These are not linked to any information that is personally identifiable. The purpose of the information is for analyzing trends, administering the site, tracking users' movement on the website, and gathering demographic information.
+                    <br><br>
+                    <b>CCPA Privacy Rights</b><br>
+                    Under the CCPA, among other rights, California consumers have the right to:
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 1. Request that a business that collects a consumer's personal data disclose the categories and specific pieces of personal data that a business has collected about consumers.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 2. Request that a business delete any personal data about the consumer that a business has collected.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 3. Request that a business that sells a consumer's personal data, not sell the consumer's personal data.
+                    <br><br>
+                    If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+                    <br><br>
+                    <b>GDPR Data Protection Rights</b><br>
+                    We would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 1. The right to access – You have the right to request copies of your personal data. We may charge you a small fee for this service.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 2. The right to rectification – You have the right to request that we correct any information you believe is inaccurate. You also have the right to request that we complete the information you believe is incomplete.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 3. The right to erasure – You have the right to request that we erase your personal data, under certain conditions.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 4. The right to restrict processing – You have the right to request that we restrict the processing of your personal data, under certain conditions.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 5. The right to object to processing – You have the right to object to our processing of your personal data, under certain conditions.
+                    <br><br>
+                    &nbsp&nbsp&nbsp&nbsp 6. The right to data portability – You have the right to request that we transfer the data that we have collected to another organization, or directly to you, under certain conditions.
+                    <br><br>
+                    If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us.
+                    <br><br>
+                    <b>Children's Information</b><br>
+                    Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.
+                    <br><br>
+                    IPMD does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.
+                    </div>
+
+                   
+    
+                <div class = "checkbox_container" style="margin-left: 15px;">
+                    <label class = "checkbox" for= "checkboxID">
+                      <input class="checkbox__input" type="checkbox" name="myCheckboxName" required id= "checkboxID" onclick=rememberMe()>
+                      &nbsp;I Agree
+                    </label>
+                    
+                </div>
+                <button type="submit" class="btn btn-primary" style="margin-top: 0px;">Sign up</button>
+                
+
+    
+            </div>
+    
+            </div>
+        </form>
+    
+    
+    
+            <!-- Filler between the new and previous sign-up system
+    
+            <br><br><br><br><br><br>
+    
+    
+            Previous sign-up system 
+
+        <form method="post" action="{% url 'accounts:signup' %}">
+            {% csrf_token %}
+            {% for field in form %}
+            <div class="fieldWrapper" style = "color: grey;">
+                  {{ field.errors }} 
+                <div style = "color: grey; text-transform: none;">
+			        	{{ field.label_tag }} {{ field }} 
+                </div>
+            </div>
+            {% endfor %}
+
+            {% if messages %}
+            {% for message in messages %}
+
+                {{ message }}
+                
+            {% endfor %}
+            </div>
+            {% endif %}
+            
+            <div style="text-align: center; font-size: 14px; color: grey;">
+                Password needs to be at least 8 characters and include a number, letter, and symbol
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Sign up</button>
+        </form>
+-->
+        <br><br>
+        
+        
+    </body>
+    
+{% endblock content %} 

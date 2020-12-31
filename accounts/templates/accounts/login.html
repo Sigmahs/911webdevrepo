@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<style>
+
+/* start of large tablet styles */
+@media screen and (max-width: 1100px) {
+  .form{
+    display: inline-block;
+    align-content: center;
+    width: 100%;
+  }
+
+  .user_pw{
+    font-size: 20px;
+    width: 600px;
+    margin-right:3px;
+
+  }
+
+  .checkbox {
+    font-size: 15px;
+  }
+  .forgot {
+    padding-right: 47px;
+    font-size: 15px;
+  }
+
+  .login_margin {
+    margin-top: 30%;
+
+  }
+
+  .rad20 {
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 7%;
+    font-size: 25px;
+  }
+
+  .new_account{
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+}
+
+/* start of medium tablet styles */
+@media screen and (max-width: 769px) {
+  .form{
+    display: inline-block;
+    align-content: center;
+    width: 100%;
+  }
+
+  .user_pw{
+    font-size: 20px;
+    width: 600px;
+    margin-right:3px;
+
+  }
+
+  .checkbox {
+    font-size: 15px;
+  }
+  .forgot {
+    padding-right: 47px;
+    font-size: 15px;
+  }
+
+  .login_margin {
+    margin-top: 34%;
+
+  }
+
+  .rad20 {
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 7%;
+    font-size: 25px;
+  }
+
+  .new_account{
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+}
+
+/* start of phone styles */
+@media screen and (max-width: 479px) {
+
+  .form{
+    display: inline-block;
+    align-content: center;
+    width: 100%;
+  }
+
+  .user_pw{
+    font-size: 20px;
+    width: 600px;
+    margin-right:3px;
+
+  }
+
+  .checkbox {
+    font-size: 15px;
+  }
+  .forgot {
+    padding-right: 47px;
+    font-size: 15px;
+  }
+
+  .login_margin {
+    margin-top: 45%;
+
+  }
+
+  .rad20 {
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 7%;
+    font-size: 25px;
+  }
+
+  .new_account{
+    font-weight: 300;
+    font-size: 20px;
+  }
+
+}
+
+/* start of small phone styles */
+@media screen and (max-width: 320px) {
+
+  {% comment %} .form{
+    display: inline-block;
+    align-content: center;
+    width: 100%;
+  }
+
+  .user_pw{
+    font-size: 20px;
+    width: 600px;
+    margin-right:3px;
+
+  }
+
+  .checkbox {
+    font-size: 15px;
+  }
+  .forgot {
+    padding-right: 47px;
+    font-size: 15px;
+  } {% endcomment %}
+
+  .login_margin {
+    margin-top: 40%;
+
+  {% comment %} }
+
+  .rad20 {
+    width: 40%;
+    padding-top: 1%;
+    padding-bottom: 7%;
+    font-size: 25px;
+  }
+
+  .new_account{
+    font-weight: 300;
+    font-size: 20px;
+  } {% endcomment %}
+
+}
+
+</style>
+
+  <body>
+    <div class = "form">
+      <form action = "{% url 'accounts:login' %}" method = "post">
+        {% csrf_token %}
+        <div class="user_pw">
+          <div > Username </div>
+          <input class = "inside" type ="text" placeholder ="Username" name = "username" style = "text-transform: none">
+        </div>
+        <div class="user_pw">
+          <div> Password </div>
+          <input class = "inside" type ="password" placeholder="8 Characters" style ="text-transform: none" name="password" id= "user_password">
+
+
+          <script>
+            function showPassword() {
+              var input = document.getElementById("user_password");
+              if (input.type === "password") {
+                input.type = "text";
+              } else {
+                input.type = "password";
+              }
+            }
+          </script>
+
+          <span class = "eye">
+            <i class="fa fa-eye" aria-hidden="true" onclick = "showPassword()"></i>
+          </span>
+
+
+          <!--
+          <div class = "forgot"><a href="url"> Forgot Password</a> </div>
+          -->
+          <div class = "checkbox_container">
+            <label class = "checkbox" for= "checkboxID">
+              <input class="checkbox__input" type="checkbox" name="myCheckboxName" id= "checkboxID" onclick=rememberMe()>
+              &nbsp;Remember Me
+            </label>
+          </div>
+        </div>
+
+    </div>
+
+
+
+
+    {% comment %} <form method="post" action="{% url 'accounts:login' %}" class="form-signin">
+      {% csrf_token %}
+      <!-- {{ form.as_p }} -->
+      {% for field in form %}
+          <div class="fieldWrapper">
+           <!--   {{ field.errors }} -->
+              <div>
+                  {{ field.label_tag }}{{ field }}
+              </div>
+          </div>
+      {% endfor %}
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert success red">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      {% if request.GET.next %}
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+      {% endif %}
+    </div> {% endcomment %}
+    <div class ="login_margin">
+      <div>
+        <button class = "rad20" type="submit" value="Submit">LOGIN</button>
+      </div>
+
+<!-- GOOGLE SIGN IN BUTTON (NOT CHECKED)
+  <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="508520849505-lqokjp6956as5ioofbmhujabbc8f0v56.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+    <script>
+-->
+
+
+      <!-- GOOGLE/FACEBOOK SIGNUP BUTTON
+      <div>
+        <div class = "or">
+          <span> OR </span>
+        </div>
+        <h1></h1>
+        <button class = "google" type="submit">
+          <img type="image/png" src="{% static "img/google_logo.png" %}"/>
+            Login with Google
+        </button>
+        <button class = "google" type="submit">
+          <img type="image/png" src="{% static "img/facebook.png" %}"/>
+            Login with Facebook
+        </button>
+      </div>
+      -->
+
+      <div class = "make_account">
+        {% comment %} <div class="remember">
+            <input type="checkbox" name="rememberme" value="1" class="checkbox">
+            <label for="checkbox" >Remember me </label>
+        </div> {% endcomment %}
+
+        <div class ="new_account" >
+          Don't have an account?
+          <a class ="create" href="{% url 'accounts:signup' %}" style="color:#E10078;">Create an account</a>
+        </div>
+      </div>
+
+    </div>
+
+    </form>
+
+  </body>
+
+{% endblock content %}

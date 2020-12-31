@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %} 
+
+  {% if user.is_authenticated %}
+    <meta http-equiv="Refresh" content="0; url=home" />
+  {% else %}
+    <body>
+        <h3>You have logged out</h3>
+        <a class="rad20" href="{% url 'login' %}">Login</a>
+        <br>
+  </body>
+
+  {% endif %}
+{% endblock content %}

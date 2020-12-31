@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<script type="text/javascript" src="{% static "js/video.js" %}"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<style>
+  #overlay, #results_overlay {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  overflow-x:hidden;
+  overflow-y: hidden;
+  border-style: none;
+ 
+}
+
+.video {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	z-index: 5;
+}
+
+</style>
+</head>
+<body>
+<div id="container">
+	<iframe src="overlay"  id="overlay"></iframe>
+	<iframe src="results_overlay"  id="results_overlay"></iframe>
+	<video autoplay="true" id="videoElement">
+	
+	</video>
+	
+	<button onclick='screenshot()'>screenshot</button>
+	<img id='image' style="display:none;" src=''>
+	<canvas id='screenshot' style="display:none;"></canvas>
+</div>
+<form id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" style="display: none;">
+              {% csrf_token %}
+              <div class="input-group mb-3">
+                <div class="custom-file">
+                  <input type="file" id='testimg' class="custom-file-input" aria-describedby="inputGroupFileAddon01" onchange="testSize(this);" name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer;">
+                  <input id="number" type="hidden" name="repeat" value="0" />
+                  <label class="custom-file-label" style="width: 180px; cursor: pointer;" for="inputGroupFile01">Choose file</label>
+                </div>
+              </div>
+            </form>
+           
+<script>
+
+</script>
+</body>
+</html>

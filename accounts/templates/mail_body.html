@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+  <title>Email Verification</title>
+  <link rel="icon" type="image/png" href="{% static "img/m-favicon.png" %}" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta http-equiv="cache-control" content="max-age=0" />
+  <meta http-equiv="cache-control" content="no-cache" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+  <meta http-equiv="pragma" content="no-cache" />
+  <link rel="stylesheet" href="{% static "bootstrap-4.3.1/css/bootstrap.min.css" %}"/>
+  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
+  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+  <script "{% static "bootstrap-4.3.1/js/bootstrap.min.js" %}"></script>
+  <script type="text/javascript" src="{% static "js/homepage.js" %}"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static "css/style.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/navbar.css" %}"/>
+</head>
+
+<style> 
+
+#message{
+    display:grid;
+    height: 500px;
+    width: 60%;
+    {% comment %} border: 1px pink solid; {% endcomment %}
+    float: left;
+    margin-left: 5%;
+   
+    
+}
+
+.words{
+    font:'Open Sans';
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #333333;
+
+}
+
+.click {
+    height: 50px; 
+    width: 250px; 
+    background-color: #00A69C;
+    border-radius: 5px; 
+    border: 1px solid #00A69C;
+    font:'Open Sans';
+    font-size: 20px;
+    color: white;
+
+}
+
+</style>
+
+<body>
+  <nav class="navbar navbar-default" style="background-color: #00A69C;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"> <img class="img-fluid " type="image/png"src="{% static "img/m-logow.png" %}" style = "width:170px; display: block; margin-left: 20%; margin-right: auto; padding-bottom:4px;">
+      </a>
+    </div>
+  </div>
+</nav>
+  
+<div class="container" id ="message" style="margin-top:5%;">
+  <div class = "words">Hi <a style="color: black; font-weight:400;">{{ request.user.username }},</a> </div>
+  <div class = "words">
+        Welcome to <img class="img-fluid " type="image/png"src="{% static "img/m_frontlogo.png" %}" style = "width:130px;">. Please click the button below to confirm your email address and activate your account.
+  </div>
+  <button class = "click"> Confirm your account</button>
+  <div class = "words"> Project M Team </div>
+</div>
+  
+</body>
+</html> 

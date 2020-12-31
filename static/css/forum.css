@@ -1,0 +1,197 @@
+.container-fluid {
+  height: 100vh;
+}
+
+.general {
+  background-color: #4060C0;
+  color: white;
+  height: 100%;
+  padding: 0px;
+}
+
+.top-general {
+  background-color: #425390;
+  padding: 10px;
+  padding-bottom: 30px;
+}
+
+.main {
+  height: 100%;
+}
+
+.threads {
+  background-color: #16254C;
+  color: white;
+  height: 100%;
+  padding: 0px;
+}
+
+.direction-left {
+  direction: rtl;
+}
+
+.content-ltr {
+  direction: ltr;
+}
+
+.content {
+  height: 100%;
+  color: black;
+}
+
+.new-thread {
+  padding: 20px;
+  padding-right: 10px;
+  color: #16254C;
+  height: 10%;
+}
+
+.padding {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #334455;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.thread-items {
+  color: white;
+  overflow: auto;
+  margin: 0px;
+  height: 90%;
+}
+
+.user-image {
+  width: 70%;
+  margin: auto;
+}
+
+.logo-div {
+  padding-top: 15px;
+  padding-right: 10px;
+  padding-left: 15px;
+}
+
+.center {
+  text-align: center;
+}
+
+.ipmd-forum {
+  padding-top: 0px;
+  padding-left: 15px;
+}
+
+hr {
+  border-top: 0px;
+  border-bottom: 0px;
+  border-bottom: solid white 1px;
+  clear: both;
+  width: 90%;
+  background-color: white;
+  height: 0.5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.forum-container {
+  width: 100%;
+  padding-left: 35px;
+  padding-right: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.forum-container:hover {
+  cursor: pointer;  
+}
+
+.padding-hr-horizontal {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.padding-hr-vertical {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.no-margin {
+  margin: 0px;
+}
+
+.no-padding {
+  padding: 0px;
+}
+
+.no-top-margin {
+  margin-top: 0px;
+}
+
+.padding-top-10 {
+  padding-top: 10px;
+}
+
+.arrow-left {
+  z-index: 1;
+  right: 0;
+  top: 30px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid white;
+}
+
+.padding-left-20 {
+  padding-left: 30px;
+}
+
+
+.thread-form {
+  padding-left: 20px;
+}
+
+.form-item {
+  padding: 5px;
+  color: black;
+}
+
+.form-button {
+  color: #16254C;
+  margin: 5px;
+}
+
+.waiting-text {
+  text-align: center;
+  text-overflow: wrap;
+  font-size: 80px;
+  margin: 15%;
+  color: lightgrey;
+}
+
+.hide {
+  display: none;
+}
+
+.inline {
+  display: inline;
+} 
+
+.actions {
+  padding-bottom: 10px;
+}
