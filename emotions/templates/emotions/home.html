@@ -18,7 +18,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
   <script "{% static "bootstrap-4.3.1/js/bootstrap.min.js" %}"></script>
   <script type="text/javascript" src="{% static "js/homepage.js" %}"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{% static "css/navbar.css"%}"/>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
@@ -62,80 +63,22 @@
 
 {% block content %}
 
-<nav class="navbar navbar-expand-md navbar-fixed-top navbar-toggleable-sm navbar-inverse sticky-top" style="background-color: #00a69c;">
+<nav class="navbar navbar-expand-md navbar-fixed-top navbar-toggleable-sm navbar-inverse sticky-top" style="width: 100vw; height: 150px; background-color: #ffffff;">
   <div>
-    <a class="navbar-brand" href="http://www.ipmdinc.com">
-      <img src="{% static "img/m-logow.png"%}" alt="Logo" style="width:200px;">
-    </a>
+    
+    <div class="ATMA"> ATMA </div>
+    <div class="navigation" style="text-align: right; text-format: horizontal">
+      <div>Home</div>
+      <div>About Us</div>
+      <div>Contact Us</div>
+    </div>
+    
   </div>
    
-  <div class="navbar-nav ml-auto">
-    <ul class="navbar-nav mr-auto">
-        <div class="collapse navbar-collapse">
-        <li class="nav-item" style="padding-right: 10px; 
-        color: white;  
-        font-family: 'Open Sans'; 
-        font-size: 2.5rem;
-        font-weight: 50;
-        margin-top: 6px;"> <h5>Account: {{ request.user.username }}</h5></li>
-        </div>
 
-        <li class="nav-item"><form class="logout-link" action="{% url 'accounts:logout' %}" method="post"></li>
-        {% csrf_token %}
-        <li class="nav-item">
-        <button type="submit" style="border: 1px solid #FFFFFF;
-        box-sizing: border-box;
-        border-radius: 5px;
-        background-color:#00A69C;
-        font-family: Open Sans;
-        width: 100px;
-        height: 35px;
-        font-style: normal;
-        font-weight: bold;
-        font-size: 14px;
-        line-height: 40px;
-        align-items: center;
-        text-align: center;
-        line-height: 19px;
-        color: white;
-        margin-left: 20px;"> <b>Logout</b></button>
-        </form>
-        </li>
-    </ul>
-  </div>
 </nav>
-{% if firstTime %}  <div id="pop" class = "row justify-content-center" style="height: 550px; width: 800px; border: 2px solid #CCCCCC; background: #FFFFFF; border-radius: 5px; z-index: 4">
-    <div style = "text-align:center;" class = "row justify-content-center" >
-      <div style =" color: #4F4F4F; 
-      padding-top:5%;
-      margin-bottom:-30px;
-      font-size: 24px; 
-      font-weight: bold; 
-      "> M image guidelines </div>
-      <div style ="padding: 4%; 
-      padding-right:12%;
-      padding-left:12%;
-      font-size: 18px; 
-      width:100%;
-      margin-bottom:-80px;
-      color: #4F4F4F;
-      ">Upload a photo of <a style="font-weight:bold;">a person</a> with their <a style="font-weight:bold;">face centered</a>. <a style="color: #E10078;">The face must fill at least 70% of the image.</a> The file must be under 2MB and in JPG or PNG format.</div>
-    </div>
-    <div id="guides" style="display: flex;padding: 8%;">
+{% if firstTime %} 
 
-      <div style ="width:364.96px; height: 364.96px;float:left; padding-left:4%; ">
-        <img src="{% static "img/incorrect.png" %}"> 
-      </div>
-
-
-      <div style ="width:364.96px; height: 364.96px; float:left;padding-left:4%;">
-        <img src="{% static "img/correct.png" %}"> 
-      </div>
-
-
-    </div>
-    <button id="clos_button">x</button>
-  </div>
 {% endif %}
 
     <!--Start of FrontPage (REMOVED FROM VIEW)
@@ -186,90 +129,36 @@
 
     <!--Start of Interaction-->
 
-    <div style = "text-align: right; position: fixed; right: 0; z-index:5">
-      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_s-xclick" />
-        <input type="hidden" name="hosted_button_id" value="L28KJ8ATCQJ84" />
-        <button style="text-align: center; color: white; font-size: 18px; font-family: 'Open Sans', sans-serif; height: 40px; width: 128px; background: #E10078;
-        border: 1px solid #FFFFFF;
-        box-sizing: border-box;
-        border-radius: 5px;
-        margin-right: -5px;
-        margin-top: 30px;
-        "> Donate </button>
-      </form>
-    </div>
+    
 
     <div id = "Interaction" 
     class= "container-fluid"
     style = "width: 85vw;
     margin-top: 0vh;">
 
-      <div id="explore">
-        <h2 class="container-fluid"
-        style="
-        text-align: center;
-        font-size: 50px;
-        font-family: Open Sans;
-        color: rgba(0, 0, 0, 0.7);
-        margin-bottom: 50px;
-        ">
-          <img src="static/img/exploreM.png" width=350px height=81.585px>
-        </h2>
-      </div>
+      
 
 
       <div class="row">
-
-
-        <div class="col-md-4 col-xs-6 col-sm-push-6" style="text-align: center;">
-
-          <form id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="wheelLoader(this)" 
-            style="width: 20.2vw; max-width: 400px; min-width: 300px; height: 50px; margin-left: 0.8vw; border-radius: 5px; 
-            background-image: url('static/img/uploadimg.png'); background-size: cover; background-position: center;
-            margin-bottom: 20px; display: inline-block;">
-              {% csrf_token %}
-              <div class="input-group mb-3">
-                <div class="custom-file">
-                  <input type="file" class="custom-file-input" aria-describedby="inputGroupFileAddon01" onchange="testSize(this);" 
-                  name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer; " placeholder = "Choose File";>
-                  <input id="number" type="hidden" name="repeat" value="0" />
-                  <label for="inputGroupFile01"></label>
-                </div>
-              </div>
-            </form>
-
-
-          <img id="image-preview" src="{% static "img/default.jpg" %}" alt="Image preview" 
-          style = "max-height: 512px;  
-          width: 20.4vw;
-          height: auto;
-          max-width: 400px;
-          margin-left: 0.8vw;
-          min-width: 300px;"/>
-          <img  id="image-loading" class="img-fluid image-overlay" src="{% static "img/wheelLoader.gif" %}" alt="Image Loading" style="position: absolute; left: 40%; top: 30%; max-height: 35vh; max-width: 16vw; visibility: hidden;"/>
-        
+        <div class="welcome" style="width: 80vw; height: 120px; text-align: center; font-family: Inter; font-stretch: normal; letter-spacing: normal; line-height; normal; margin-top: 50px;">
+            <div style="font-size: 35px; font-weight: bold; ">Welcome to ATMA</div>
+          <div style="font-size: 20px; font-weight: normal; margin-top: 5px;"> Identify the different types of crises by uploading a picture</div>
+          
+        </div>
+        <div class="upload-rect" style="width:85vw; height:254px; margin-top: 20px; margin-bottom: 35px; padding: 24px 0 15px; border-radius: 15px; background-color: #eceff2";>
+            <div style="margin-top: 140px; text-align:center; font-size: 18px; font-family: Inter; color: #586673;"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
+            <div style = "text-align: center; font-size: 13px; font-family:Inter; color: #8494a2;"> Accepted File Types: .jpg or .png</div>
+        </div>
+        <div class="example-display" style="width: 85vw; height: 200px;"> 
+            <div style="text-align: left; font-size:18px; font-family: Inter; ">Examples</div>
+            <img src="{% static "img/samplephoto_01.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
+            <img src="{% static "img/samplephoto_02.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
+            <img src="{% static "img/samplephoto_03.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
+            <img src="{% static "img/samplephoto_04.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
+            <img src="{% static "img/samplephoto_05.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px;">
+            </div>
         </div>
 
-
-        <div class="col-md-8 col-xs-6 col-sm-push-6">
-          <div style ="font-size: 32px; color:#00A69C; text-align:left; margin-left: 130px;" class="text-center text-md-left"> Results </div>
-      
-          <iframe class="border-0" name="results_iframe" onload="wheelLoaderHider()" src="results" 
-          style = "
-          height: 65vh;
-          width: 85vw;
-          background-size:cover;
-          margin-left: 15px;
-          align-content: right;
-          ">
-          Your browser does not support iframes.</iframe>
-          <p id="url" hidden>{{gcs_url}}</p>
-
-        </div>
-
-
-        <div class="col-md-1"></div>
 
 
       </div>
