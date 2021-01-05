@@ -63,10 +63,12 @@
 
 {% block content %}
 
-<nav class="navbar navbar-expand-md navbar-fixed-top navbar-toggleable-sm navbar-inverse sticky-top" style="width: 100vw; height: 150px; background-color: #ffffff;">
+<nav class="navbar navbar-expand-md navbar-fixed-top navbar-toggleable-sm navbar-inverse sticky-top" style="width: 100vw; height: 135px; background-color: #ffffff;">
   <div>
     
-    <div class="ATMA"> ATMA </div>
+    <div class="ATMA-home"> 
+      <img src="{% static "img/Logo_transparentBG.png"%}">
+      </div>
     <div class="navigation" style="text-align: right; text-format: horizontal">
       <div>Home</div>
       <div>About Us</div>
@@ -140,21 +142,22 @@
 
 
       <div class="row">
-        <div class="welcome" style="width: 80vw; height: 120px; text-align: center; font-family: Inter; font-stretch: normal; letter-spacing: normal; line-height; normal; margin-top: 50px;">
+        <div class="welcome" style="width: 85vw; height: 120px; text-align: center; font-family: Inter; font-stretch: normal; letter-spacing: normal; line-height; normal; margin-top: 30px;">
             <div style="font-size: 35px; font-weight: bold; ">Welcome to ATMA</div>
           <div style="font-size: 20px; font-weight: normal; margin-top: 5px;"> Identify the different types of crises by uploading a picture</div>
           
         </div>
-        <div class="upload-rect" style="width:85vw; height:254px; margin-top: 20px; margin-bottom: 35px; padding: 24px 0 15px; border-radius: 15px; background-color: #eceff2";>
+        <div class="upload-rect" style="width:80vw; height:254px; margin: auto; padding: 24px 0 15px; border-radius: 15px; background-color: #eceff2; text-align: center;">
             <div style="margin-top: 140px; text-align:center; font-size: 18px; font-family: Inter; color: #586673;"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
             <div style = "text-align: center; font-size: 13px; font-family:Inter; color: #8494a2;"> Accepted File Types: .jpg or .png</div>
         </div>
-        <div class="example-display" style="width: 85vw; height: 200px;"> 
-            <div style="text-align: left; font-size:18px; font-family: Inter; ">Examples</div>
-            <img src="{% static "img/samplephoto_01.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
-            <img src="{% static "img/samplephoto_02.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
-            <img src="{% static "img/samplephoto_03.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
-            <img src="{% static "img/samplephoto_04.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 5vw;">
+        <div class="example-display" style="width: 80vw; height: 200px; margin: auto;">
+            <div class="example-text" style="text-align: left; font-size:18px; font-family: Inter; margin-top: 2vw; margin-bottom: 15px;">Examples</div>
+            <div class="example-images" style = "text-align: center;">
+            <img src="{% static "img/samplephoto_01.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 3.5vw;">
+            <img src="{% static "img/samplephoto_02.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 3.5vw;">
+            <img src="{% static "img/samplephoto_03.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 3.5vw;">
+            <img src="{% static "img/samplephoto_04.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px; margin-right: 3.5vw;">
             <img src="{% static "img/samplephoto_05.jpg"%}" style="width: 183px; height: 124px; object-fit: contain; border-radius: 20px;">
             </div>
         </div>
