@@ -2,7 +2,7 @@
 {% load static %}
 <head>
   {% block head %}
-  <title>Project M</title>
+  <title>Project ATMA</title>
   <link rel="icon" type="image/png" href="{% static "img/m-favicon.png" %}" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -26,6 +26,7 @@
   <style>
     html, body {
       max-width: 100%;
+      height: 100vh;
       overflow-x: hidden;
       {% comment %} overflow-y: hidden; {% endcomment %}
       {% comment %} overflow-y: hidden; {% endcomment %}
@@ -56,344 +57,586 @@
       color: #828282;
       font-weight:300;
     }
-    /*
-    .nav-bar {
-      width: 100vw; 
-      height: 120px; 
-      background-color: #ffffff; 
-      display: inline-flex; 
-      padding-top: 12px;
+    .ml-8 {
+      margin-left: 13rem !important;
     }
-    */
-    
-    #home-logo {
-      width: 210px; 
-    }
-    
-    nav {
-      display: block;
-      width: 100%;
-      margin: 0;
-    }
-    
-    nav ul {
-      
-      height: 110px;
+    .navbar {
+      cursor: default;
+      width: 95vw;
+      height: 120px;
       background-color: #ffffff;
-      overflow: hidden;
-      margin: 0;
-      padding: 0;
-    }
-    
-    ul.nav-items li {
-      list-style: none;
-      float: left;
-      
-    }
-    
-    li.nav-text a {
-      display: block;
-      text-decoration: none;
-      min-height: 16px;
-      text-align: center;
-      margin-top: 60px;
-      margin-right: 88px;
-      font-family: Inter;
-      font-size: 18px;
-      font-weight: 500;
-      color: #000000;
-      border-radius: 2px;
-      border-bottom: 3px solid #ffffff;
-      box-shadow: 0 2px 0 0 #ffffff;
-      transition: border-bottom 0.3s;
-    }
-    
-      li.nav-text a:hover {
-          text-decoration: none;
-      color: #000000;
-      border-bottom: 3px solid #3d73ff;
-      padding-bottom: auto;
-      transition: border-bottom 0.4s;
-    
-      }
-      
-    li#nav-logo{
-      margin: 20px 350px 0 50px;
-    }
-    
-    
-      /*
-    a {
-      color: #000000;
-      border-radius: 2px;
-      border-bottom: 3px solid #ffffff;
-      box-shadow: 0 2px 0 0 #ffffff;
-      transition: border-bottom 0.3s;
-    }
-    
-    a:hover {
-      text-decoration: none;
-      color: #000000;
-      border-bottom: 3px solid #3d73ff;
-      transition: border-bottom 0.4s;
-    }
-    
-    a:active {
-      
-    }
-    */
-    #log-button {
-      width: 124px; 
-      height: 35px; 
-      padding: 5px 25px 13px 42px; 
-      margin: 55px 0 0 95px;
-      border-radius: 100px;
-      border-color: #ffffff;
-      background-color: #3d73ff; 
-      color: #ffffff; 
-      font-size: 16px; 
-      font-family: Inter; 
-      font-weight: 500;
-    }
-    
-    #log-button:hover {
-      text-decoration: underline white;
-      cursor: pointer;
-    }
-    
-    .welcome-text {
-      width: 1261px; 
-      height: 120px; 
-      text-align: center; 
-      font-family: Inter; 
-      font-stretch: normal;
-      letter-spacing: normal; 
-      line-height; normal; 
-      margin-top: 40px; 
-      margin-bottom: 15px;
-    }
-    
-    #welcome-atma {
-      font-size: 35px; 
-      font-weight: bold;
-    }
-    #welcome-info {
-      font-size: 20px; 
-      font-weight: normal; 
-      margin-top: 5px;
-    }
-    
-    .upload-rect {
-      width:1081px; 
-      height:254px; 
-      margin: auto; 
-      border-radius: 15px;
-      background-color: #eceff2; 
-      text-align: center;
-      font-family: Inter;
-    }
-    
-    
-    #cloud-image {
-      width: 87px; 
-      height: 89px; 
-      margin-top: 60px;
-    }
-    
-    #upload-drag {
-      margin-top: 20px; 
-      font-size: 18px;
-      color: #586673;
-    }
-    
-    #upload-image {
-      font-size: 13px;
-      color: #8494a2;
-    }
-    
-    .upload-text {
-      display: table;
-      margin: auto;
     }
 
-    .upload-text:hover {
-      text-decoration: underline #586673;
-      cursor: pointer;
+    .home-logo {
+      width: 210px;
     }
-    
-    .example-rect {
-      width: 1081px; 
-      height: 200px; 
-      margin: auto;
+
+    .navbar-brand {
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
     }
-    
-    #example-text {
-      text-align: left; 
-      font-weight: 500; 
-      font-size:18px; 
-      font-family: Inter; 
-      margin: 30px 0 5px 8px;
+
+    .navbar-brand:hover {
+      text-decoration: underline;
+      text-decoration-color: #3d73ff;
+      text-decoration-thickness: 3px;
     }
-    
-    .example-images {
-      width: 181px; 
-      height: 124px; 
-      border-radius: 20px; 
-      margin-right: 39px;
+    .navbar-toggler.navbar-toggler-right {
+      display: none;
     }
-    
-    #example-last {
-      margin-right: 0;
-    }
-  </style>
-  {% endblock %}
+    /*
+    nav {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+
+  nav ul {
+
+  height: 110px;
+  background-color: #ffffff;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nav-items li {
+list-style: none;
+float: left;
+
+}
+
+ul.nav-items li.nav-text a {
+display: block;
+text-decoration: none;
+min-height: 16px;
+text-align: center;
+font-size-adjust: 0.5;
+margin-top: 50px;
+margin-right: 7vw;
+font-family: Inter;
+font-size: 18px;
+font-weight: 500;
+color: #000000;
+border-radius: 2px;
+border-bottom: 3px solid #ffffff;
+box-shadow: 0 2px 0 0 #ffffff;
+transition: border-bottom 0.3s;
+}
+
+ul.nav-items li.nav-text a:hover {
+text-decoration: none;
+color: #000000;
+border-bottom: 3px solid #3d73ff;
+padding-bottom: auto;
+transition: border-bottom 0.4s;
+
+}
+
+li.nav-logo{
+margin: 10px 25vw 0 3vw;
+}
+
+ul.nav-items li.dropdownIcon{
+display: none;
+}
+*/
+.log-button {
+  width: 110px;
+  height: 35px;
+  padding: 5px 26px 11px 30px;
+  border-style: solid;
+  border-radius: 100px;
+
+  background-color: #3d73ff;
+  color: #ffffff;
+  font-size: 14px;
+  font-family: Inter;
+  font-weight: 500;
+
+}
+
+.log-button:hover {
+  text-decoration: underline white;
+  cursor: pointer;
+}
+
+.welcome-text {
+  width: 1261px;
+  height: 120px;
+  text-align: center;
+  font-family: Inter;
+  font-stretch: normal;
+  letter-spacing: normal;
+  line-height: normal;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.welcome-atma {
+  font-size: 35px;
+  font-weight: bold;
+}
+.welcome-info {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 5px;
+}
+
+.upload-rect {
+  width:1081px;
+  height: 254px;
+  margin: auto;
+  border-radius: 15px;
+  background-color: #eceff2;
+  text-align: center;
+  font-family: Inter;
+}
+
+
+.cloud-image {
+  width: 87px;
+  height: 89px;
+  margin-top: 60px;
+}
+
+.upload-drag {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #586673;
+}
+
+.upload-image {
+  font-size: 13px;
+  color: #8494a2;
+}
+
+.upload-click {
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+}
+
+.upload-click:hover {
+  text-decoration: underline #586673;
+  cursor: pointer;
+}
+
+.upload-text {
+  display: table;
+  margin: auto;
+}
+
+.example-rect {
+  width: 1081px;
+  height: 200px;
+  margin: auto;
+}
+
+.example-text {
+  text-align: left;
+  font-weight: 500;
+  font-size:18px;
+  font-family: Inter;
+  margin: 30px 0 5px 8px;
+}
+
+.example-images {
+  width: 181px;
+  height: 124px;
+  border-radius: 20px;
+  margin-right: 39px;
+  overflow: hidden;
+}
+
+.example-last {
+  margin-right: 0;
+}
+
+.image-info {
+  position: absolute;
+}
+.dot {
+  margin: 0 51px 0 0;
+  width: 11px;
+  height: 11px;
+  background-color: #ffffff;
+}
+
+.line {
+  width: 53px;
+  height: 1px;
+  margin: 5px 0 5px 9px;
+  background-color: #b9b9b9;
+}
+
+.box {
+  width: 334px;
+  height: 197px;
+  margin: 0 0 0 48px;
+  padding: 46px 28px 39px 24px;
+  border-radius: 10px;
+  box-shadow: 0 0 16px 0 rgba(96, 97, 112, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+  background-color: #ffffff;
+  z-index: 9999;
+}
+
+.info-bar {
+  width: 269px;
+  height: 26px;
+  margin: 0 0 10px 13px;
+  padding: 0 47px 0 0;
+  border-radius: 30px;
+  background-color: #e5e5e5;
+}
+
+.top-colored {
+  width: 222px;
+  height: 26px;
+  border-radius: 30px;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.bottom-colored {
+  width: 222px;
+  height: 26px;
+  border-radius: 30px;
+  background-color: #cf0101;
+  color: #ffffff;
+}
+
+.crime-type {
+  margin: 0 0 0 15px;
+  width: max-content;
+  display: inline-block;
+}
+
+.accuracy {
+  width: max-content;
+  margin-right: 13px;
+  float: right;
+  display: inline-block;
+}
+
+.image-exp {
+  width: 80%;
+  height: max-content;
+  margin: 25px 0 0 25px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  .ml-8 {
+    margin-left: 0 !important;
+  }
+  .navbar-brand {
+    font-size: 16px;
+  }
+  .home-logo {
+    margin-right: 0 !important;
+  }
+  .example-images {
+    width: 121px;
+    height: 90px;
+  }
+}
+@media screen and (max-width: 680px) {
+  .navbar-brand {
+    display: none;
+  }
+  .navbar-toggler.navbar-toggler-right {
+    display: block;
+  }
+  .navbar-collapse.collapse.in {
+    display: block!important;
+  }
+  .navbar-nav .nav-item .nav-link {
+    text-align: center;
+    font-family: Inter;
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+    z-index: 1;
+  }
+
+  .navbar-nav .nav-item:hover .nav-link {
+    background-color: #eceff2;
+  }
+  .log-button {
+    display: none;
+  }
+}
+/*
+@media screen and (max-width: 680px) {
+ul.nav-items li.nav-text a{
+display: none;
+}
+
+ul.nav-items li.log-button {
+display: none;
+}
+ul.nav-items li.dropdownIcon{
+display: block;
+float: right;
+text-decoration: none;
+font-size: 40px;
+color: #000000;
+}
+
+ul.nav-items li.dropdownIcon a:hover {
+text-decoration: none;
+}
+
+.welcome-text {
+margin-top: 20px;
+}
+
+.welcome-atma {
+font-size: 30px;
+}
+
+.welcome-info {
+font-size: 15px;
+}
+
+ul.nav-items.responsive {
+position: relative;
+}
+
+ul.nav-items.responsive li {
+display: inline;
+float: none;
+
+}
+ul.nav-items response li a {
+display: block;
+text-align: left;
+}
+}
+*/
+</style>
+{% endblock %}
 </head>
 
 {% block content %}
 
 <body>
+
+  <!--
   <nav class="nav-bar">
-    
-    <ul class="nav-items">
-      <li id="nav-logo"><a href="/"><img src="{% static "img/Logo_transparentBG.png"%}" id="home-logo"></a></li>
-      <li class="nav-text"><a href="/">Home</a></li>
-      <li class="nav-text"><a href="http://www.ipmdinc.com/">About Us</a></li>
-      <li class="nav-text"><a href="http://www.ipmdinc.com/about-us.html">Contact Us</a></li>
-      <li id="log-button">Login</li>
-    <!--<div style="margin: 37px 0 0 170px; width: 30.8px; height: 30.8px;"><img src="{% static "img/icon_account.png"%}"></div>
-      <div style="margin: 45px 0 0 19px;">ATMA</div>-->
-    </ul>
+  <ul class="nav-items" id=dropdownClick>
+  <li class="nav-logo"><a href="/"><img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo"></a></li>
+  <li class="nav-text"><a href="/">Home</a></li>
+  <li class="nav-text"><a href="http://www.ipmdinc.com/">About Us</a></li>
+  <li class="nav-text"><a href="http://www.ipmdinc.com/about-us.html">Contact Us</a></li>
+  <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
+  <li class="log-button">Login</li>
+  <!--<div style="margin: 37px 0 0 170px; width: 30.8px; height: 30.8px;"><img src="{% static "img/icon_account.png"%}"></div>
+  <div style="margin: 45px 0 0 19px;">ATMA</div>
+</ul>
+</nav>
+<script type="text/javascript">
+function dropdownMenu() {
+var x = document.getElementById("dropdownClick");
+if (x.className === "topnav") {
+x.className += " responsive";
+} else {
+x.className = "nav-items";
+}
+}
+
+</script>
+-->
+<div class="container">
+  <nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded">
+
+    <img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo mr-5">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand ml-8" href="/">Home</a>
+    <a class="navbar-brand" href="http://www.ipmdinc.com/">About Us</a>
+    <a class="navbar-brand mr-5" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
+    <button onclick="/accounts/login.html" class="log-button mx-1" type="button">Login</button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://www.ipmdinc.com/">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
+        </li>
+        <li class="nav-item">
+          <button class="log-button" type="button">Login</button>
+        </li>
+      </ul>
+    </div>
+    <div class="image-description">
+
+    </div>
   </nav>
-  {% if firstTime %} 
+</div>
+{% if firstTime %}
 
-  {% endif %}
+{% endif %}
 
-    <!--Start of FrontPage (REMOVED FROM VIEW)
-    <div id = "FrontPage" 
-    class="container-fluid" 
-    style = "
-    background-color: white; 
-    width: 85vw; 
-    max-width: 1280px; 
-    text-align: center;">
-    <h1 class="container-fluid" 
-      style= "
-      color:#E10078; 
-      text-align: center; 
-      padding-top: 10vh;"> 
-      <img src="static/img/m_frontlogo.png" style = "width: 70vw; height: auto; max-width: 500px; max-height: 85px;">
-    </h1>
-    <h4 class="container-fluid" 
-      style= "
-      color:#494C53; 
-      font-family: 'Open Sans'; 
-      font-size: 2.5rem;
-      font-weight: 130;
-      padding-top: 4vh;">
-      <b>Recognising Emotions Through <br> Hidden & Micro-Facial Expressions</b></h4>
+<!--Start of FrontPage (REMOVED FROM VIEW)
+<div id = "FrontPage"
+class="container-fluid"
+style = "
+background-color: white;
+width: 85vw;
+max-width: 1280px;
+text-align: center;">
+<h1 class="container-fluid"
+style= "
+color:#E10078;
+text-align: center;
+padding-top: 10vh;">
+<img src="static/img/m_frontlogo.png" style = "width: 70vw; height: auto; max-width: 500px; max-height: 85px;">
+</h1>
+<h4 class="container-fluid"
+style= "
+color:#494C53;
+font-family: 'Open Sans';
+font-size: 2.5rem;
+font-weight: 130;
+padding-top: 4vh;">
+<b>Recognising Emotions Through <br> Hidden & Micro-Facial Expressions</b></h4>
+</div>
+<div class="toTestPage"></div>
+<a href="#explore"  style="color: #494C53; text-align:center; text-decoration: none;">
+</h2>
+<h2 class="container-fluid"
+style="
+text-align: center;
+margin-top: 10vh;
+margin-bottom: 0vh;
+">
+<img src="static/img/testbutton.png" width=420px height=126.7px
+style = "
+border: 3px solid #E10078;
+border-radius: 3px;
+box-sizing: border-box;">
+</h2>
+<br><br><br><br><br>
+</a>
+</div>
+-->
+
+
+
+<!--Start of Interaction-->
+
+
+
+<div id = "Interaction"
+class= "container-fluid"
+style = "width: 85vw;
+margin-top: 0vh;">
+
+<div class="row">
+  <div class="welcome-text">
+    <div class="welcome-atma">Welcome to ATMA</div>
+    <div class="welcome-info"> Identify the different types of crises by uploading a picture</div>
+  </div>
+  <div class="upload-rect">
+    <img src="{% static "img/icon_cloud.png"%}" class="cloud-image">
+    <div class="upload-click" onclick="upload()">
+      <div class="upload-text upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
+      <div class="upload-text upload-image"> Accepted File Types: .jpg or .png</div>
     </div>
-    <div class="toTestPage"></div>
-      <a href="#explore"  style="color: #494C53; text-align:center; text-decoration: none;">
-        </h2>
-        <h2 class="container-fluid"
-        style="
-        text-align: center;
-        margin-top: 10vh;
-        margin-bottom: 0vh;
-        "> 
-          <img src="static/img/testbutton.png" width=420px height=126.7px
-          style = "
-          border: 3px solid #E10078;
-          border-radius: 3px;
-          box-sizing: border-box;"> 
-        </h2>
-        <br><br><br><br><br>
-        </a>
-    </div>
+  </div>
+  <div class="example-rect">
+    <div class="example-text">Examples</div>
+    <img src="{% static "img/samplephoto_01.jpg"%}" class="example-images" id="first-image">
+
+
+    <img src="{% static "img/samplephoto_02.jpg"%}" class="example-images">
+    <img src="{% static "img/samplephoto_03.jpg"%}" class="example-images">
+    <img src="{% static "img/samplephoto_04.jpg"%}" class="example-images">
+    <img src="{% static "img/samplephoto_05.jpg"%}" class="example-images example-last">
+  </div>
+  <div class="image-info" id="display">
+    <!--
+    <div class="dot"></div>
+    <div class="line"></div>
   -->
-
-  
-
-  <!--Start of Interaction-->
-
-  
-
-  <div id = "Interaction" 
-  class= "container-fluid"
-  style = "width: 85vw;
-  margin-top: 0vh;">
-
-  <div class="row">
-    <div class="welcome-text">
-      <div id="welcome-atma">Welcome to ATMA</div>
-      <div id="welcome-info"> Identify the different types of crises by uploading a picture</div>
+  <div class="box">
+    <div class="info-bar">
+      <div class="top-colored">
+        <div class="crime-type">Crime</div>
+        <div class="accuracy">85</div>
+      </div>
     </div>
-    <div class="upload-rect">
-      <img src="{% static "img/icon_cloud.png"%}" id="cloud-image">
-      <div class="upload-text" id="upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
-      <div class="upload-text" id="upload-image"> Accepted File Types: .jpg or .png</div>
+    <div class="info-bar">
+      <div class="bottom-colored">
+        <div class="crime-type">Crime Alert</div>
+        <div class="accuracy">85</div>
+      </div>
     </div>
-    <div class="example-rect">
-      <div id="example-text">Examples</div>
-      <img src="{% static "img/samplephoto_01.jpg"%}" class="example-images">
-      <img src="{% static "img/samplephoto_02.jpg"%}" class="example-images">
-      <img src="{% static "img/samplephoto_03.jpg"%}" class="example-images">
-      <img src="{% static "img/samplephoto_04.jpg"%}" class="example-images">
-      <img src="{% static "img/samplephoto_05.jpg"%}" class="example-images" id="example-last">
-      
-    </div>
-
-
-
+    <div class="image-exp">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
   </div>
 </div>
 
 
 
-
-    <!-- START OF MOBILE HOME 
-    <div style="text-align: center;">
-      <img src="static/img/exploreM.png" width=85% height=auto style="display: block; margin-left: auto; margin-right: auto; z-index: 1; margin-top: 40px; margin-bottom: 40px;">
-    </div>
-    <div style="text-align: center;">
-      <form id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="wheelLoader(this)">
-        {% csrf_token %}
-          <button type="button" class="btn btn-primary btn-lg" 
-          style="width: 50%; max-width: 400px; min-width: 200px; height: auto; margin-left: 20px; 
-          margin-bottom: 20px; background-color: #00A69C; 
-          border-color: #00A69C; font-family: 'Open Sans';"
-          aria-describedby="inputGroupFileAddon01" onclick="testSize(this);" name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer;"> Choose File 
-          </button>
-          <input id="number" type="hidden" name="repeat" value="0" />
-      </form>
-      <img id="image-preview" src="{% static "img/default.jpg" %}" alt="Image preview" 
-          style = "max-height: 512px;  
-          width: 80%;
-          height: auto;
-          max-width: 400px;
-          margin-left: 0.8vw;
-          min-width: 300px;"/>
-          <img  id="image-loading" class="img-fluid image-overlay" src="{% static "img/wheelLoader.gif" %}" alt="Image Loading" style="position: absolute; left: 40%; top: 30%; max-height: 35vh; max-width: 16vw; visibility: hidden;"/>
-      
-      <div style ="font-size: 30px; font-weight: 50; color:#00A69C; text-align:left; margin-bottom: 20px; margin-top: 20px;" class="text-center text-md-left"> Results </div>
-        <iframe class="border-0" name="results_iframe" onload="wheelLoaderHider()" src="results" 
-        style = "
-        max-height: 100%;
-        width: 80%;
-        align-content: right;">
-        Your browser does not support iframes.</iframe>
-        <p id="url" hidden>{{gcs_url}}</p>
-    </div>
-  -->
-  
+</div>
+</div>
 
 
-  
+
+
+<!-- START OF MOBILE HOME
+<div style="text-align: center;">
+<img src="static/img/exploreM.png" width=85% height=auto style="display: block; margin-left: auto; margin-right: auto; z-index: 1; margin-top: 40px; margin-bottom: 40px;">
+</div>
+<div style="text-align: center;">
+<form id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="wheelLoader(this)">
+{% csrf_token %}
+<button type="button" class="btn btn-primary btn-lg"
+style="width: 50%; max-width: 400px; min-width: 200px; height: auto; margin-left: 20px;
+margin-bottom: 20px; background-color: #00A69C;
+border-color: #00A69C; font-family: 'Open Sans';"
+aria-describedby="inputGroupFileAddon01" onclick="testSize(this);" name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer;"> Choose File
+</button>
+<input id="number" type="hidden" name="repeat" value="0" />
+</form>
+<img id="image-preview" src="{% static "img/default.jpg" %}" alt="Image preview"
+style = "max-height: 512px;
+width: 80%;
+height: auto;
+max-width: 400px;
+margin-left: 0.8vw;
+min-width: 300px;"/>
+<img  id="image-loading" class="img-fluid image-overlay" src="{% static "img/wheelLoader.gif" %}" alt="Image Loading" style="position: absolute; left: 40%; top: 30%; max-height: 35vh; max-width: 16vw; visibility: hidden;"/>
+
+<div style ="font-size: 30px; font-weight: 50; color:#00A69C; text-align:left; margin-bottom: 20px; margin-top: 20px;" class="text-center text-md-left"> Results </div>
+<iframe class="border-0" name="results_iframe" onload="wheelLoaderHider()" src="results"
+style = "
+max-height: 100%;
+width: 80%;
+align-content: right;">
+Your browser does not support iframes.</iframe>
+<p id="url" hidden>{{gcs_url}}</p>
+</div>
+-->
+
+
+
+
 <!-- Previous footer
-    <div class ="footer-info">
-    -->
-    {% endblock %}
-  </body>
+<div class ="footer-info">
+-->
+{% endblock %}
 
 
-  
+</body>
