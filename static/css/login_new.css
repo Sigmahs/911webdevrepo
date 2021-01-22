@@ -1,0 +1,514 @@
+    :root{
+        --PrimaryButton_Blue: #3d73ff;
+        --Text_Black: #000000;
+        --Background_White: #ffffff;
+        --SecondaryButton_Grey: #cecece;
+        --UploadFileIcon_DarkGrey: #96a7b6;
+        --BrowseFile_Background_LightGrey: #eceff2;
+    }
+
+  body {
+      max-width: 100%;
+      }
+
+  .container {
+
+
+      }
+
+  .Log-in2nd-version {
+      width: 100%
+      height: 100%;
+      padding: 18.1% 21.6% 15.22% 19.0%;
+      border-radius: 15px;
+      background-color: var(--Background_White);
+        }
+  .Bg {
+      width: 31.9%;
+      height: 66.77%;
+      margin: 0 3.7% 0 0;
+      padding: 17.6% 4.2% 7.3% 4.44%;
+      border-radius: 10px;
+      background-image: linear-gradient(to top, #a3bcff, var(--PrimaryButton_Blue));
+      float:left;
+      display:inline;
+
+
+}
+
+  .Lorem-ipsum-dolor-sit-amet-consectetur-adipiscing {
+    width: 23.4%;
+    height: 14.4%;
+    margin: 49px 53.5px 23.4px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--Background_White);
+    }
+
+  .Arrow-Icon {
+    width: 21px;
+    height: 22.4px;
+    margin: 45.8px 135px 0 13px;
+    background-color: var(--Background_White);
+    }
+
+  .Hand-Icon {
+    width: 24.8px;
+    height: 17.3px;
+    margin: 1.1px 0 0;
+    padding: 2.4px 5.4px 9px 17.3px;
+    background-image: linear-gradient(to top, #a3bcff, var(--PrimaryButton_Blue));
+    }
+
+  .ATMA {
+    width: 8.3%;
+    height: 3.28%;
+    margin: 0 0 0 0.49%;
+    font-family: ArchivoBlack;
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 1.25px;
+    text-align: right;
+    }
+
+  .Create-your-ATMA-account {
+    width: 20.4%;
+    height: 3.9%;
+    margin: 0 67px 17.5px 0;
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--Text_Black);
+    }
+
+  .Name {
+    width: 129.2px;
+    height: 41.9px;
+    margin: 0 60.8px 32.3px 0;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--Text_Black);
+    }
+
+  .Bar_First-Name {
+    width: 171px;
+    height: 39.2px;
+    margin: 105.7px 192px 50.4px 44.2px;
+    padding: 10.9px 11.1px 6.9px 23.2px;
+    border-radius: 20px;
+    border: solid 1.5px #d1d1d1;
+    background-color: var(--Background_White);
+    }
+
+  .First-Name {
+    width: 136.7px;
+    height: 21.3px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b9b9b9;
+    }
+
+  .Bar_Last-Name {
+    width: 171px;
+    height: 39.2px;
+    margin: 35px 0 0 60.8px;
+    padding: 10.3px 13.3px 7.6px 21px;
+    border-radius: 20px;
+    border: solid 1.5px #d1d1d1;
+    background-color: var(--Background_White);
+    }
+
+  .Last-Name {
+    width: 136.7px;
+    height: 21.3px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #b9b9b9;
+    }
+
+  .Email-Address {
+    width: 72%;
+    height: 5%;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--Text_Black);
+    }
+
+  .Forgot-Bottom {
+    width: 80%;
+    height: 5%;
+    margin: 10.5% 0 0 0;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: var(--Text_Black);
+    }
+
+
+  .Bar_Email {
+      width: 65%;
+      height: 4.4%;
+      margin: 0px 0 10px 0.3px;
+      padding: 10.7px 38.4px 10.8px 10.6px;
+      border-radius: 20px;
+      border: solid 1.5px #d1d1d1;
+      background-color: var(--Background_White);
+}
+
+  .admin123examplecom {
+      width: 288.8px;
+      height: 18.2px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #b9b9b9;
+    }
+
+  .Password {
+      width: 131.4px;
+      height: 21.6px;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--Text_Black);
+  }
+
+  .Bar_Password {
+      width: 65%;
+      height: 4.4%;
+      margin: 0px 0 0 0.3px;
+      padding: 10.7px 38.4px 10.8px 10.6px;
+      border-radius: 20px;
+      border: solid 1.5px #d1d1d1;
+      background-color: var(--Background_White);
+    }
+
+  .password-should-longer-than-8-characters {
+      width: 288.8px;
+      height: 18.2px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #b9b9b9;
+    }
+
+  .ButtonBg_Log-in {
+      width: 360px;
+      height: 40.8px;
+      margin: 17.7px 1px 12.6px 0;
+      padding: 9.3px 121.5px 12px 152.3px;
+      border-radius: 20px;
+      background-color: var(--PrimaryButton_Blue);
+    }
+
+  .Sign-Up {
+      width: 86.2px;
+      height: 19.6px;
+      font-family: Inter;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--Background_White);
+    }
+
+  .or {
+      width: 28px;
+      height: 18.6px;
+      margin: 41px 0 0 53px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #979797;
+      float:left;
+    }
+
+  .Log-in-with {
+      width: 15%;
+      height: 20px;
+      margin: 95px 105px 16px 215px;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--Text_Black);
+}
+
+  .Vector {
+      width: 31.5px;
+      height: 31.5px;
+      background-color: #d5281f;
+}
+
+.Keep-me-sign-in {
+  width: 257.2px;
+  height: 18.9px;
+  margin: 22px 60.8px 18.5px 6px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--Text_Black);
+}
+
+  .Vector {
+      width: 31.7px;
+      height: 31.5px;
+      background-color: #0357d6;
+}
+
+  .Vector {
+      width: 32.6px;
+      height: 32.6px;
+      background-color: #37537d;
+}
+
+  .Create {
+      width: 1440px;
+      height: 900px;
+      padding: 163px 311px 137px 274px;
+      border-radius: 15px;
+      background-color: var(--Background_White);
+}
+
+    .main {
+        background-color: #FFFFFF;
+        float: left;
+        width:49%;
+        display:inline;
+        height: 66.7%;
+        border-radius: 1.5em;
+
+
+    }
+
+    .sign {
+        padding-top: 40px;
+        color: #8C55AA;
+        font-family: 'Ubuntu', sans-serif;
+        font-weight: bold;
+        font-size: 23px;
+    }
+
+    .un {
+        width: 76%;
+        color: rgb(38, 50, 56);
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 1px;
+        background: rgba(136, 126, 126, 0.04);
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        outline: none;
+        box-sizing: border-box;
+        border: 2px solid rgba(0, 0, 0, 0.02);
+        margin-bottom: 50px;
+        margin-left: 46px;
+        text-align: center;
+        margin-bottom: 27px;
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    form.form1 {
+        padding-top: 40px;
+    }
+
+    .pass {
+            width: 76%;
+    color: rgb(38, 50, 56);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    background: rgba(136, 126, 126, 0.04);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    box-sizing: border-box;
+    border: 2px solid rgba(0, 0, 0, 0.02);
+    margin-bottom: 50px;
+    margin-left: 46px;
+    text-align: center;
+    margin-bottom: 27px;
+    font-family: 'Ubuntu', sans-serif;
+    }
+
+    hr.new1 {
+        width: 27%;
+        height: 1px;
+        margin: 50px 0px 8.6px 5px;
+        float: left;
+        }
+
+    hr.new2 {
+        width: 27%;
+        height: 1px;
+        margin: 50px 31px 8.6px 48px;
+        float:left;
+        }
+
+
+    .ant-designgoogle-circle-filled {
+          width: 7.5%;
+          height: auto;
+          margin: 17px 11.5px 26.7px 168px;
+          float:left;
+}
+
+    .other-icons{
+          width: 7%;
+          height: auto;
+          margin: 17px 15px 26.7px 2px;
+          float:left;
+          }
+
+
+    .un:focus, .pass:focus {
+        border: 2px solid rgba(0, 0, 0, 0.18) !important;
+
+    }
+
+    .submit {
+      cursor: pointer;
+      width:62%;
+        border-radius: 5em;
+        color: #fff;
+        background: linear-gradient(to right,  var(--PrimaryButton_Blue), #a3bcff);
+        border: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        font-family: Inter;
+        margin-left: 0%;
+        font-size: 13px;
+        box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+    }
+
+    .forgot {
+        text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+        color: #E1BEE7;
+        padding-top: 15px;
+    }
+
+    a {
+      color: var(--PrimaryButton_Blue);
+      width: 122px;
+      height: 11.8px;
+
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      text-decoration: none
+    }
+
+
+    a:hover {
+      color: #a3bcff;
+      }
+
+    span.psw {
+      float: right;
+      margin: 0 200px 0 0;
+    }
+
+    @media (max-width: 600px) {
+        .main {
+            border-radius: 0px;
+        }
+
+
+.Forgot-password {
+  width: 122px;
+  height: 11.8px;
+  margin: 22px 25px 25.7px 11px;
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: left;
+  color: var(--PrimaryButton_Blue);
+}
