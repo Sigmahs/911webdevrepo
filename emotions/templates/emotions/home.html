@@ -164,14 +164,14 @@ display: none;
 
 .welcome-text {
   width: 1261px;
-  height: 120px;
+  height: 100px;
   text-align: center;
   font-family: Inter;
   font-stretch: normal;
   letter-spacing: normal;
   line-height: normal;
-  margin-top: 40px;
-  margin-bottom: 15px;
+  margin-top: 30px;
+  margin-bottom: 35px;
 }
 
 .welcome-atma {
@@ -186,7 +186,7 @@ display: none;
 
 .upload-rect {
   width:1081px;
-  height: 254px;
+  height: 230px;
   margin: auto;
   border-radius: 15px;
   background-color: #eceff2;
@@ -248,30 +248,40 @@ display: none;
   border-radius: 20px;
   margin-right: 39px;
   overflow: hidden;
+  z-index: 4;
 }
 
 .example-last {
   margin-right: 0;
 }
 
-.image-info {
+#info-dot {
   position: absolute;
-}
-.dot {
-  margin: 0 51px 0 0;
+  display: nonen;
+  bottom: 30px;
+  right: 80px;
   width: 11px;
   height: 11px;
   background-color: #ffffff;
+  border-radius: 50%;
+  z-index: 3;
 }
 
-.line {
+#info-line {
+  position: absolute;
+  display: none;
+  top: -20px;
+  right: 80px;
   width: 53px;
   height: 1px;
   margin: 5px 0 5px 9px;
   background-color: #b9b9b9;
+  z-index: 0;
 }
 
 .box {
+  position: absolute;
+  display: none;
   width: 334px;
   height: 197px;
   margin: 0 0 0 48px;
@@ -279,7 +289,7 @@ display: none;
   border-radius: 10px;
   box-shadow: 0 0 16px 0 rgba(96, 97, 112, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
   background-color: #ffffff;
-  z-index: 9999;
+  z-index: 2
 }
 
 .info-bar {
@@ -291,7 +301,7 @@ display: none;
   background-color: #e5e5e5;
 }
 
-.top-colored {
+#top-colored {
   width: 222px;
   height: 26px;
   border-radius: 30px;
@@ -299,7 +309,7 @@ display: none;
   color: #ffffff;
 }
 
-.bottom-colored {
+#bottom-colored {
   width: 222px;
   height: 26px;
   border-radius: 30px;
@@ -307,7 +317,7 @@ display: none;
   color: #ffffff;
 }
 
-.crime-type {
+.info-type {
   margin: 0 0 0 15px;
   width: max-content;
   display: inline-block;
@@ -323,7 +333,7 @@ display: none;
 .image-exp {
   width: 80%;
   height: max-content;
-  margin: 25px 0 0 25px;
+  margin: 20px 0 0 34px;
   font-family: Inter;
   font-size: 14px;
   font-weight: 500;
@@ -369,6 +379,11 @@ display: none;
   }
   .log-button {
     display: none;
+  }
+
+  .example-images {
+    margin-right: 30px;
+    margin-bottom: 10px;
   }
 }
 /*
@@ -426,82 +441,56 @@ text-align: left;
 {% block content %}
 
 <body>
+  <div class="container">
+    <nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded">
 
-  <!--
-  <nav class="nav-bar">
-  <ul class="nav-items" id=dropdownClick>
-  <li class="nav-logo"><a href="/"><img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo"></a></li>
-  <li class="nav-text"><a href="/">Home</a></li>
-  <li class="nav-text"><a href="http://www.ipmdinc.com/">About Us</a></li>
-  <li class="nav-text"><a href="http://www.ipmdinc.com/about-us.html">Contact Us</a></li>
-  <li class="dropdownIcon"><a href="javascript:void(0);" onclick="dropdownMenu()">&#9776;</a></li>
-  <li class="log-button">Login</li>
-  <!--<div style="margin: 37px 0 0 170px; width: 30.8px; height: 30.8px;"><img src="{% static "img/icon_account.png"%}"></div>
-  <div style="margin: 45px 0 0 19px;">ATMA</div>
-</ul>
-</nav>
-<script type="text/javascript">
-function dropdownMenu() {
-var x = document.getElementById("dropdownClick");
-if (x.className === "topnav") {
-x.className += " responsive";
-} else {
-x.className = "nav-items";
-}
-}
+      <img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo mr-5">
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand ml-8" href="/">Home</a>
+      <a class="navbar-brand" href="http://www.ipmdinc.com/">About Us</a>
+      <a class="navbar-brand mr-5" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
+      <button onclick="/accounts/login.html" class="log-button mx-1" type="button">Login</button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.ipmdinc.com/">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <button class="log-button" type="button">Login</button>
+          </li>
+        </ul>
+      </div>
+      <div class="image-description">
 
-</script>
--->
-<div class="container">
-  <nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded">
+      </div>
+    </nav>
+  </div>
+  {% if firstTime %}
 
-    <img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo mr-5">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand ml-8" href="/">Home</a>
-    <a class="navbar-brand" href="http://www.ipmdinc.com/">About Us</a>
-    <a class="navbar-brand mr-5" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
-    <button onclick="/accounts/login.html" class="log-button mx-1" type="button">Login</button>
-    <div class="collapse navbar-collapse" id="navbarText">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://www.ipmdinc.com/">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
-        </li>
-        <li class="nav-item">
-          <button class="log-button" type="button">Login</button>
-        </li>
-      </ul>
-    </div>
-    <div class="image-description">
+  {% endif %}
 
-    </div>
-  </nav>
-</div>
-{% if firstTime %}
-
-{% endif %}
-
-<!--Start of FrontPage (REMOVED FROM VIEW)
-<div id = "FrontPage"
-class="container-fluid"
-style = "
-background-color: white;
-width: 85vw;
-max-width: 1280px;
-text-align: center;">
-<h1 class="container-fluid"
-style= "
-color:#E10078;
-text-align: center;
-padding-top: 10vh;">
-<img src="static/img/m_frontlogo.png" style = "width: 70vw; height: auto; max-width: 500px; max-height: 85px;">
+  <!--Start of FrontPage (REMOVED FROM VIEW)
+  <div id = "FrontPage"
+  class="container-fluid"
+  style = "
+  background-color: white;
+  width: 85vw;
+  max-width: 1280px;
+  text-align: center;">
+  <h1 class="container-fluid"
+  style= "
+  color:#E10078;
+  text-align: center;
+  padding-top: 10vh;">
+  <img src="static/img/m_frontlogo.png" style = "width: 70vw; height: auto; max-width: 500px; max-height: 85px;">
 </h1>
 <h4 class="container-fluid"
 style= "
@@ -549,43 +538,53 @@ margin-top: 0vh;">
     <div class="welcome-info"> Identify the different types of crises by uploading a picture</div>
   </div>
   <div class="upload-rect">
-    <img src="{% static "img/icon_cloud.png"%}" class="cloud-image">
-    <div class="upload-click" onclick="upload()">
-      <div class="upload-text upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
-      <div class="upload-text upload-image"> Accepted File Types: .jpg or .png</div>
-    </div>
-  </div>
-  <div class="example-rect">
-    <div class="example-text">Examples</div>
-    <img src="{% static "img/samplephoto_01.jpg"%}" class="example-images" id="first-image">
-
-
-    <img src="{% static "img/samplephoto_02.jpg"%}" class="example-images">
-    <img src="{% static "img/samplephoto_03.jpg"%}" class="example-images">
-    <img src="{% static "img/samplephoto_04.jpg"%}" class="example-images">
-    <img src="{% static "img/samplephoto_05.jpg"%}" class="example-images example-last">
-  </div>
-  <div class="image-info" id="display">
-    <!--
-    <div class="dot"></div>
-    <div class="line"></div>
-  -->
-  <div class="box">
-    <div class="info-bar">
-      <div class="top-colored">
-        <div class="crime-type">Crime</div>
-        <div class="accuracy">85</div>
-      </div>
-    </div>
-    <div class="info-bar">
-      <div class="bottom-colored">
-        <div class="crime-type">Crime Alert</div>
-        <div class="accuracy">85</div>
-      </div>
-    </div>
-    <div class="image-exp">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
-  </div>
+  <img src="{% static "img/icon_cloud.png"%}" class="cloud-image">
+  <div class="upload-click" onclick="upload()">
+  <div class="upload-text upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
+  <div class="upload-text upload-image"> Accepted File Types: .jpg or .png</div>
 </div>
+<!--
+<form class="upload-rect" id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="/">
+  {% csrf_token %}
+  <div class="input-group mb-3">
+    <div class="custom-file">
+      <input type="file" class="custom-file-input upload-drag" aria-describedby="inputGroupFileAddon01" onchange="testSize(this);"
+      name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer;" placeholder = "Hello";>
+      <input id="number" type="hidden" name="repeat" value="0">
+      <label for="inputGroupFile01"></label>
+    </div>
+  </div>
+</form>
+-->
+</div>
+<div class="example-rect">
+  <div class="example-text">Examples</div>
+  <img onmouseover="image_hover(this)" onmouseout="image_off(this)" src="{% static "img/samplephoto_01.jpg"%}" class="example-images crime crime-alert">
+  <img onmouseover="image_hover(this)" onmouseout="image_off(this)" src="{% static "img/samplephoto_02.jpg"%}" class="example-images medical medical-alert">
+  <img onmouseover="image_hover(this)" onmouseout="image_off(this)" src="{% static "img/samplephoto_03.jpg"%}" class="example-images no-action no-emergency">
+  <img onmouseover="image_hover(this)" onmouseout="image_off(this)" src="{% static "img/samplephoto_04.jpg"%}" class="example-images emergency medical">
+  <img onmouseover="image_hover(this)" onmouseout="image_off(this)" src="{% static "img/samplephoto_05.jpg"%}" class="example-images medical medical-alert example-last ">
+</div>
+<div class="box" id="info-box">
+
+  <div class="info-bar">
+    <div id="top-colored">
+      <div class="info-type" id="top-text"> </div>
+      <div class="accuracy">85</div>
+    </div>
+  </div>
+  <div class="info-bar">
+    <div id="bottom-colored">
+      <div class="info-type" id="bottom-text"> </div>
+      <div class="accuracy">85</div>
+    </div>
+  </div>
+
+  <div class="image-exp">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+</div>
+
+<div id="info-line"></div>
+<div id="info-dot"></div>
 
 
 
