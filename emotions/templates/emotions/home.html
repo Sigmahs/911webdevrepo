@@ -12,6 +12,7 @@
   <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
   <meta http-equiv="pragma" content="no-cache" />
   <link rel="stylesheet" href="{% static "bootstrap-4.3.1/css/bootstrap.min.css" %}"/>
+  <link rel="stylesheet" href="{% static "css/navbar.css"%}"/>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -57,385 +58,201 @@
       color: #828282;
       font-weight:300;
     }
-    .ml-8 {
-      margin-left: 13rem !important;
-    }
-    .navbar {
-      cursor: default;
-      width: 95vw;
-      height: 120px;
-      background-color: #ffffff;
-    }
 
-    .home-logo {
-      width: 210px;
-    }
 
-    .navbar-brand {
+    .welcome-text {
+      width: 1261px;
+      height: 100px;
+      text-align: center;
       font-family: Inter;
+      font-stretch: normal;
+      letter-spacing: normal;
+      line-height: normal;
+      margin-top: 30px;
+      margin-bottom: 35px;
+    }
+
+    .welcome-atma {
+      font-size: 35px;
+      font-weight: bold;
+    }
+    .welcome-info {
+      font-size: 20px;
+      font-weight: normal;
+      margin-top: 5px;
+    }
+
+    .upload-rect {
+      width:1081px;
+      height: 230px;
+      margin: auto;
+      border-radius: 15px;
+      background-color: #eceff2;
+      text-align: center;
+      font-family: Inter;
+    }
+
+
+    .cloud-image {
+      width: 87px;
+      height: 89px;
+      margin-top: 60px;
+    }
+
+    .upload-drag {
+      margin-top: 20px;
       font-size: 18px;
+      color: #586673;
+    }
+
+    .upload-image {
+      font-size: 13px;
+      color: #8494a2;
+    }
+
+    .upload-click {
+      width: fit-content;
+      height: fit-content;
+      margin: auto;
+    }
+
+    .upload-click:hover {
+      text-decoration: underline #586673;
+      cursor: pointer;
+    }
+
+    .upload-text {
+      display: table;
+      margin: auto;
+    }
+
+    .example-rect {
+      width: 1081px;
+      height: 200px;
+      margin: auto;
+    }
+
+    .example-text {
+      text-align: left;
       font-weight: 500;
+      font-size:18px;
+      font-family: Inter;
+      margin: 30px 0 5px 8px;
     }
 
-    .navbar-brand:hover {
-      text-decoration: underline;
-      text-decoration-color: #3d73ff;
-      text-decoration-thickness: 3px;
+    .example-images {
+      width: 181px;
+      height: 124px;
+      border-radius: 20px;
+      margin-right: 39px;
+      overflow: hidden;
+      z-index: 4;
     }
-    .navbar-toggler.navbar-toggler-right {
+
+    .example-last {
+      margin-right: 0;
+    }
+
+    #info-dot {
+      position: absolute;
       display: none;
+      bottom: 30px;
+      right: 80px;
+      width: 11px;
+      height: 11px;
+      background-color: #ffffff;
+      border-radius: 50%;
+      z-index: 3;
     }
-    /*
-    nav {
-    display: block;
-    width: 100%;
-    margin: 0;
-  }
 
-  nav ul {
+    #info-line {
+      position: absolute;
+      display: none;
+      top: -20px;
+      right: 80px;
+      width: 53px;
+      height: 1px;
+      margin: 5px 0 5px 9px;
+      background-color: #b9b9b9;
+      z-index: 0;
+    }
 
-  height: 110px;
-  background-color: #ffffff;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-}
+    .box {
+      position: absolute;
+      display: none;
+      width: 334px;
+      height: 197px;
+      margin: 0 0 0 48px;
+      padding: 46px 28px 39px 24px;
+      border-radius: 10px;
+      box-shadow: 0 0 16px 0 rgba(96, 97, 112, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
+      background-color: #ffffff;
+      z-index: 2;
+    }
 
-ul.nav-items li {
-list-style: none;
-float: left;
+    .info-bar {
+      width: 269px;
+      height: 26px;
+      margin: 0 0 10px 13px;
+      padding: 0 47px 0 0;
+      border-radius: 30px;
+      background-color: #e5e5e5;
+    }
 
-}
+    #top-colored {
+      width: 222px;
+      height: 26px;
+      border-radius: 30px;
+      background-color: #000000;
+      color: #ffffff;
+    }
 
-ul.nav-items li.nav-text a {
-display: block;
-text-decoration: none;
-min-height: 16px;
-text-align: center;
-font-size-adjust: 0.5;
-margin-top: 50px;
-margin-right: 7vw;
-font-family: Inter;
-font-size: 18px;
-font-weight: 500;
-color: #000000;
-border-radius: 2px;
-border-bottom: 3px solid #ffffff;
-box-shadow: 0 2px 0 0 #ffffff;
-transition: border-bottom 0.3s;
-}
+    #bottom-colored {
+      width: 222px;
+      height: 26px;
+      border-radius: 30px;
+      background-color: #cf0101;
+      color: #ffffff;
+    }
 
-ul.nav-items li.nav-text a:hover {
-text-decoration: none;
-color: #000000;
-border-bottom: 3px solid #3d73ff;
-padding-bottom: auto;
-transition: border-bottom 0.4s;
+    .info-type {
+      margin: 0 0 0 15px;
+      width: max-content;
+      display: inline-block;
+    }
 
-}
+    .accuracy {
+      width: max-content;
+      margin-right: 13px;
+      float: right;
+      display: inline-block;
+    }
 
-li.nav-logo{
-margin: 10px 25vw 0 3vw;
-}
+    .image-exp {
+      width: 80%;
+      height: max-content;
+      margin: 20px 0 0 34px;
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+    }
 
-ul.nav-items li.dropdownIcon{
-display: none;
-}
-*/
-.log-button {
-  width: 110px;
-  height: 35px;
-  padding: 5px 26px 11px 30px;
-  border-style: solid;
-  border-radius: 100px;
+    @media screen and (max-width: 1000px) {
+      .example-images {
+        width: 121px;
+        height: 90px;
+      }
+    }
+    @media screen and (max-width: 680px) {
+      .example-images {
+        margin-right: 30px;
+        margin-bottom: 10px;
+      }
+    }
 
-  background-color: #3d73ff;
-  color: #ffffff;
-  font-size: 14px;
-  font-family: Inter;
-  font-weight: 500;
-
-}
-
-.log-button:hover {
-  text-decoration: underline white;
-  cursor: pointer;
-}
-
-.welcome-text {
-  width: 1261px;
-  height: 100px;
-  text-align: center;
-  font-family: Inter;
-  font-stretch: normal;
-  letter-spacing: normal;
-  line-height: normal;
-  margin-top: 30px;
-  margin-bottom: 35px;
-}
-
-.welcome-atma {
-  font-size: 35px;
-  font-weight: bold;
-}
-.welcome-info {
-  font-size: 20px;
-  font-weight: normal;
-  margin-top: 5px;
-}
-
-.upload-rect {
-  width:1081px;
-  height: 230px;
-  margin: auto;
-  border-radius: 15px;
-  background-color: #eceff2;
-  text-align: center;
-  font-family: Inter;
-}
-
-
-.cloud-image {
-  width: 87px;
-  height: 89px;
-  margin-top: 60px;
-}
-
-.upload-drag {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #586673;
-}
-
-.upload-image {
-  font-size: 13px;
-  color: #8494a2;
-}
-
-.upload-click {
-  width: fit-content;
-  height: fit-content;
-  margin: auto;
-}
-
-.upload-click:hover {
-  text-decoration: underline #586673;
-  cursor: pointer;
-}
-
-.upload-text {
-  display: table;
-  margin: auto;
-}
-
-.example-rect {
-  width: 1081px;
-  height: 200px;
-  margin: auto;
-}
-
-.example-text {
-  text-align: left;
-  font-weight: 500;
-  font-size:18px;
-  font-family: Inter;
-  margin: 30px 0 5px 8px;
-}
-
-.example-images {
-  width: 181px;
-  height: 124px;
-  border-radius: 20px;
-  margin-right: 39px;
-  overflow: hidden;
-  z-index: 4;
-}
-
-.example-last {
-  margin-right: 0;
-}
-
-#info-dot {
-  position: absolute;
-  display: nonen;
-  bottom: 30px;
-  right: 80px;
-  width: 11px;
-  height: 11px;
-  background-color: #ffffff;
-  border-radius: 50%;
-  z-index: 3;
-}
-
-#info-line {
-  position: absolute;
-  display: none;
-  top: -20px;
-  right: 80px;
-  width: 53px;
-  height: 1px;
-  margin: 5px 0 5px 9px;
-  background-color: #b9b9b9;
-  z-index: 0;
-}
-
-.box {
-  position: absolute;
-  display: none;
-  width: 334px;
-  height: 197px;
-  margin: 0 0 0 48px;
-  padding: 46px 28px 39px 24px;
-  border-radius: 10px;
-  box-shadow: 0 0 16px 0 rgba(96, 97, 112, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
-  background-color: #ffffff;
-  z-index: 2
-}
-
-.info-bar {
-  width: 269px;
-  height: 26px;
-  margin: 0 0 10px 13px;
-  padding: 0 47px 0 0;
-  border-radius: 30px;
-  background-color: #e5e5e5;
-}
-
-#top-colored {
-  width: 222px;
-  height: 26px;
-  border-radius: 30px;
-  background-color: #000000;
-  color: #ffffff;
-}
-
-#bottom-colored {
-  width: 222px;
-  height: 26px;
-  border-radius: 30px;
-  background-color: #cf0101;
-  color: #ffffff;
-}
-
-.info-type {
-  margin: 0 0 0 15px;
-  width: max-content;
-  display: inline-block;
-}
-
-.accuracy {
-  width: max-content;
-  margin-right: 13px;
-  float: right;
-  display: inline-block;
-}
-
-.image-exp {
-  width: 80%;
-  height: max-content;
-  margin: 20px 0 0 34px;
-  font-family: Inter;
-  font-size: 14px;
-  font-weight: 500;
-  text-align: center;
-}
-
-@media screen and (max-width: 1000px) {
-  .ml-8 {
-    margin-left: 0 !important;
-  }
-  .navbar-brand {
-    font-size: 16px;
-  }
-  .home-logo {
-    margin-right: 0 !important;
-  }
-  .example-images {
-    width: 121px;
-    height: 90px;
-  }
-}
-@media screen and (max-width: 680px) {
-  .navbar-brand {
-    display: none;
-  }
-  .navbar-toggler.navbar-toggler-right {
-    display: block;
-  }
-  .navbar-collapse.collapse.in {
-    display: block!important;
-  }
-  .navbar-nav .nav-item .nav-link {
-    text-align: center;
-    font-family: Inter;
-    font-size: 13px;
-    font-weight: 500;
-    color: #000000;
-    z-index: 1;
-  }
-
-  .navbar-nav .nav-item:hover .nav-link {
-    background-color: #eceff2;
-  }
-  .log-button {
-    display: none;
-  }
-
-  .example-images {
-    margin-right: 30px;
-    margin-bottom: 10px;
-  }
-}
-/*
-@media screen and (max-width: 680px) {
-ul.nav-items li.nav-text a{
-display: none;
-}
-
-ul.nav-items li.log-button {
-display: none;
-}
-ul.nav-items li.dropdownIcon{
-display: block;
-float: right;
-text-decoration: none;
-font-size: 40px;
-color: #000000;
-}
-
-ul.nav-items li.dropdownIcon a:hover {
-text-decoration: none;
-}
-
-.welcome-text {
-margin-top: 20px;
-}
-
-.welcome-atma {
-font-size: 30px;
-}
-
-.welcome-info {
-font-size: 15px;
-}
-
-ul.nav-items.responsive {
-position: relative;
-}
-
-ul.nav-items.responsive li {
-display: inline;
-float: none;
-
-}
-ul.nav-items response li a {
-display: block;
-text-align: left;
-}
-}
-*/
-</style>
-{% endblock %}
+  </style>
+  {% endblock %}
 </head>
 
 {% block content %}
@@ -444,14 +261,29 @@ text-align: left;
   <div class="container">
     <nav class="navbar sticky-top navbar-toggleable-md navbar-light bg-faded">
 
-      <img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo mr-5">
+      <img src="{% static "img/Logo_transparentBG.png"%}" class="home-logo mr-5 ml-4">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand ml-8" href="/">Home</a>
       <a class="navbar-brand" href="http://www.ipmdinc.com/">About Us</a>
       <a class="navbar-brand mr-5" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
-      <button onclick="/accounts/login.html" class="log-button mx-1" type="button">Login</button>
+
+      {% if user.is_authenticated %}
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ user.username }}
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a href="/">Account</a></li>
+          <li><a href="/">Help</a></li>
+          <li><a href="/">Terms & Privacy</a></li>
+          <li><a href="{% url 'logout' %}">Log out</a></li>
+        </ul>
+      </div>
+      {% else %}
+      <a href="{% url 'login' %}" class="log-button">Log In</a>
+      {% endif %}
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
@@ -463,9 +295,7 @@ text-align: left;
           <li class="nav-item">
             <a class="nav-link" href="http://www.ipmdinc.com/about-us.html">Contact Us</a>
           </li>
-          <li class="nav-item">
-            <button class="log-button" type="button">Login</button>
-          </li>
+
         </ul>
       </div>
       <div class="image-description">
@@ -477,77 +307,32 @@ text-align: left;
 
   {% endif %}
 
-  <!--Start of FrontPage (REMOVED FROM VIEW)
-  <div id = "FrontPage"
-  class="container-fluid"
-  style = "
-  background-color: white;
-  width: 85vw;
-  max-width: 1280px;
-  text-align: center;">
-  <h1 class="container-fluid"
-  style= "
-  color:#E10078;
-  text-align: center;
-  padding-top: 10vh;">
-  <img src="static/img/m_frontlogo.png" style = "width: 70vw; height: auto; max-width: 500px; max-height: 85px;">
-</h1>
-<h4 class="container-fluid"
-style= "
-color:#494C53;
-font-family: 'Open Sans';
-font-size: 2.5rem;
-font-weight: 130;
-padding-top: 4vh;">
-<b>Recognising Emotions Through <br> Hidden & Micro-Facial Expressions</b></h4>
-</div>
-<div class="toTestPage"></div>
-<a href="#explore"  style="color: #494C53; text-align:center; text-decoration: none;">
-</h2>
-<h2 class="container-fluid"
-style="
-text-align: center;
-margin-top: 10vh;
-margin-bottom: 0vh;
-">
-<img src="static/img/testbutton.png" width=420px height=126.7px
-style = "
-border: 3px solid #E10078;
-border-radius: 3px;
-box-sizing: border-box;">
-</h2>
-<br><br><br><br><br>
-</a>
-</div>
--->
+
+  <!--Start of Interaction-->
 
 
 
-<!--Start of Interaction-->
+  <div id = "Interaction"
+  class= "container-fluid"
+  style = "width: 85vw;
+  margin-top: 0vh;">
 
-
-
-<div id = "Interaction"
-class= "container-fluid"
-style = "width: 85vw;
-margin-top: 0vh;">
-
-<div class="row">
-  <div class="welcome-text">
-    <div class="welcome-atma">Welcome to ATMA</div>
-    <div class="welcome-info"> Identify the different types of crises by uploading a picture</div>
-  </div>
-  <div class="upload-rect">
-  <img src="{% static "img/icon_cloud.png"%}" class="cloud-image">
-  <div class="upload-click" onclick="upload()">
-  <div class="upload-text upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
-  <div class="upload-text upload-image"> Accepted File Types: .jpg or .png</div>
-</div>
-<!--
-<form class="upload-rect" id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="/">
-  {% csrf_token %}
-  <div class="input-group mb-3">
-    <div class="custom-file">
+  <div class="row">
+    <div class="welcome-text">
+      <div class="welcome-atma">Welcome to ATMA</div>
+      <div class="welcome-info"> Identify the different types of crises by uploading a picture</div>
+    </div>
+    <div class="upload-rect">
+      <img src="{% static "img/icon_cloud.png"%}" class="cloud-image">
+      <div class="upload-click" onclick="upload()">
+        <div class="upload-text upload-drag"> <b>Drag and Drop</b> or <b>Browse Files</b></div>
+        <div class="upload-text upload-image"> Accepted File Types: .jpg or .png</div>
+      </div>
+      <!--
+      <form class="upload-rect" id="myform" enctype="multipart/form-data"  method="POST" action="submit" target="results_iframe" onsubmit="/">
+      {% csrf_token %}
+      <div class="input-group mb-3">
+      <div class="custom-file">
       <input type="file" class="custom-file-input upload-drag" aria-describedby="inputGroupFileAddon01" onchange="testSize(this);"
       name="avatar" accept="image/gif, image/jpeg, image/png" style="cursor: pointer;" placeholder = "Hello";>
       <input id="number" type="hidden" name="repeat" value="0">

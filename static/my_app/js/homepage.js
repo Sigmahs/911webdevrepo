@@ -6,6 +6,27 @@ var medical_alert_color = "#42a8fa";
 var no_action_color = "#8bd8aa";
 var no_emergency_color= "#0bcc58";
 
+var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
+var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
+  return new bootstrap.Dropdown(dropdownToggleEl)
+})
+
+function bar_hover(element) {
+  var rect = element.getBoundingClientRect();
+  var boxElement = document.getElementById("bar-box");
+  var lineElement = document.getElementById("bar-line");
+  var dotElement = document.getElementById("bar-dot");
+  boxElement.style.display = "block";
+  boxElement.style.top = rect.top - rect.height + 10 + "px";
+}
+
+function bar_off(element) {
+  var boxElement = document.getElementById("bar-box");
+  var lineElement = document.getElementById("bar-line");
+  var dotElement = document.getElementById("bar-dot");
+  boxElement.style.display = "none";
+}
+
 function image_hover(element) {
   var rect = element.getBoundingClientRect();
   var type1 = element.className.split(' ')[1];
@@ -32,8 +53,6 @@ function image_hover(element) {
   boxElement.style.top = rect.top - rect.height / 3 + "px";
   lineElement.style.top = rect.top + rect.height * 0.45 + "px";
   dotElement.style.top = rect.top + rect.height * 0.45 + "px";
-
-
 }
 
 function setBar(type, bar) {
