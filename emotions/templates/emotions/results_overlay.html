@@ -61,7 +61,7 @@
 
     .display-box {
       margin-top: 5em;
-      width: 80em;
+      width: 76em;
       height: auto;
       text-align: center;
     }
@@ -106,7 +106,7 @@
     }
 
     .info-type {
-      margin-left: 25px;
+      margin-left: 18px;
       margin-top: 7px;
       width: max-content;
       display: inline-block;
@@ -156,6 +156,7 @@
       display: none;
       width: 334px;
       height: 89px;
+      left: 50px;
       border-radius: 10px;
       box-shadow: 0 0 16px 0 rgba(96, 97, 112, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.04);
       background-color: #ffffff;
@@ -241,13 +242,13 @@
         <div class="display-box">
           <img src="{% static "img/samplephoto_04.jpg"%}" class="display-image">
           <div class="info-bar" onmouseover="bar_hover(this)" onmouseout="bar_off(this)">
-            <div id="top-bar">
+            <div class="bar" id="top-bar">
               <div class="info-type">Crime</div>
               <div class="accuracy">90</div>
             </div>
           </div>
           <div class="info-bar" onmouseover="bar_hover(this)" onmouseout="bar_off(this)">
-            <div id="bottom-bar">
+            <div class="bar" id="bottom-bar">
               <div class="info-type">Crime Alert</div>
               <div class="accuracy">85</div>
             </div>

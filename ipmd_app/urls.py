@@ -46,7 +46,7 @@ urlpatterns = [
     re_path(r'^submit/$', views.submit, name='submit'),
     path('email/', include(mail_urls)),
     path('', include('django.contrib.auth.urls')) #might not be right address
-] 
+]
 
 
 if settings.DEBUG:

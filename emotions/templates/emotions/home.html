@@ -34,7 +34,7 @@
     }
     .column {float: left;}
     .left {width: 44%;}
-    .right {width: 56%;}
+    .right {width: 56%; }
     .row:after {content: ""; display: table; clear: both;}
     @font-face {
       font-family: Open Sans;
@@ -59,9 +59,14 @@
       font-weight:300;
     }
 
+    .container-fluid {
+      width: 85vw;
+      margin-top: 0vh;
+      max-width: 1440px;
+    }
 
     .welcome-text {
-      width: 1261px;
+      width: 100vw;
       height: 100px;
       text-align: center;
       font-family: Inter;
@@ -83,8 +88,9 @@
     }
 
     .upload-rect {
-      width:1081px;
+      width:100vw;
       height: 230px;
+      max-width: 1080px;
       margin: auto;
       border-radius: 15px;
       background-color: #eceff2;
@@ -271,15 +277,16 @@
 
       {% if user.is_authenticated %}
       <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-          {{ user.username }}
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <li><a href="/">Account</a></li>
-          <li><a href="/">Help</a></li>
-          <li><a href="/">Terms & Privacy</a></li>
-          <li><a href="{% url 'logout' %}">Log out</a></li>
-        </ul>
+
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            {{ user.username }}
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
       </div>
       {% else %}
       <a href="{% url 'login' %}" class="log-button">Log In</a>
@@ -313,9 +320,7 @@
 
 
   <div id = "Interaction"
-  class= "container-fluid"
-  style = "width: 85vw;
-  margin-top: 0vh;">
+  class= "container-fluid">
 
   <div class="row">
     <div class="welcome-text">

@@ -6,10 +6,6 @@ var medical_alert_color = "#42a8fa";
 var no_action_color = "#8bd8aa";
 var no_emergency_color= "#0bcc58";
 
-var dropdownElementList = [].slice.call(document.querySelectorAll('.dropdown-toggle'))
-var dropdownList = dropdownElementList.map(function (dropdownToggleEl) {
-  return new bootstrap.Dropdown(dropdownToggleEl)
-})
 
 function bar_hover(element) {
   var rect = element.getBoundingClientRect();
@@ -18,6 +14,8 @@ function bar_hover(element) {
   var dotElement = document.getElementById("bar-dot");
   boxElement.style.display = "block";
   boxElement.style.top = rect.top - rect.height + 10 + "px";
+  var barText = document.getElementById("bar-text");
+  barText.innerHTML = element.getElementsByClassName("bar")[0].getElementsByClassName("info-type")[0].innerHTML;
 }
 
 function bar_off(element) {

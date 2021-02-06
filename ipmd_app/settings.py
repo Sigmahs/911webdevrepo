@@ -102,7 +102,7 @@ if 'RDS_HOSTNAME' in os.environ:
             'PORT': os.environ['RDS_PORT'],
         }
     }
-else: 
+else:
     # [START db_setup]
     DATABASES = {
             'default': {
@@ -153,7 +153,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/accounts/login'
 LOGOUT_REDIRECT_URL = 'home'
 
 EMAIL_ACTIVE_FIELD = 'is_active'

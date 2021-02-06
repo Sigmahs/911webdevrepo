@@ -45,11 +45,11 @@ def save_img(image_bytes, object_name):
 
     # Upload the file
     s3_client = boto3.client('s3', region_name='us-east-2',
-                             aws_access_key_id='AKIATIGBJSAAQH6C3RHY',
-                             aws_secret_access_key= "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")
+                             aws_access_key_id='AKIAQFEAV2W63TXCMCH3',
+                             aws_secret_access_key= "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")
     try:
         out_img = io.BytesIO(image_bytes)
-        s3_client.upload_fileobj(out_img,'atma911web', object_name)
+        s3_client.upload_fileobj(out_img,'atma-website-storage', object_name)
 
         print("upload succeed!")
     except:
@@ -79,6 +79,7 @@ def get_aws_prediction(content):
     print("payload")
     print(payload)
     print(len(payload))
+    #ask daniel
     response = client.invoke_endpoint(EndpointName=endpoint_name,
                                       Body=json.dumps(payload))
     response_body = response['Body']
