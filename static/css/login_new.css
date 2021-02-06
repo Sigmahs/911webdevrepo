@@ -12,6 +12,18 @@
       }
 
   .container {
+        @media (max-width: 1440px) {
+          foo {
+            ...
+          }
+        }
+
+        @media (max-width: 800px) {
+          foo {
+            ...
+          }
+        }
+
 
 
       }

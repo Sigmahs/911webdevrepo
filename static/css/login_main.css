@@ -40,15 +40,15 @@
     }
 
   .Log-in2nd-version {
-      width: 1440px;
-      height: 900px;
-      padding: 163px 311px 137px 274px;
+      width: 63%;
+      height: 100%;
+      padding: 124px 200px 137px 522px;
       border-radius: 15px;
       background-color: var(--Background_White);
 }
   .Bg {
-      width: 31.9%;
-      height: 66.77%;
+      width: 460.8px;
+      height: 600px;
       margin: 0 53.2px 0 0;
       padding: 158px 59.8px 65.5px 64px;
       border-radius: 10px;
@@ -144,6 +144,17 @@
     background-color: var(--Background_White);
     }
 
+  .Bar_Name {
+        width: 26.5%;
+        height: 40px;
+        margin: 0px 25px 25px 0.3px;
+        padding: 10.7px 38.4px 10.8px 10.6px;
+        border-radius: 20px;
+        border: solid 1.5px #d1d1d1;
+        float:left;
+        background-color: var(--Background_White);
+  }
+
   .First-Name {
     width: 136.7px;
     height: 21.3px;
@@ -195,6 +206,23 @@
     text-align: left;
     color: var(--Text_Black);
     }
+
+  .NameSpace {
+      width: 38%;
+      height: 5%;
+      font-family: Inter;
+      font-size: 16px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--Text_Black);
+      float:left;
+      }
+
+
 
   .Forgot-Bottom {
     width: 80%;
