@@ -23,7 +23,6 @@ from django.views.generic.base import TemplateView # new
 from django.urls import path, include # new
 from django.conf.urls import url
 from django_email_verification import urls as mail_urls
-from accounts import views as test
 
 urlpatterns = [
     path('ipmd-admin/', admin.site.urls),
@@ -46,7 +45,6 @@ urlpatterns = [
     path('userVideo', views.userVideo),
     re_path(r'^submit/$', views.submit, name='submit'),
     path('email/', include(mail_urls)),
-    path('test', test.login_view),
     path('', include('django.contrib.auth.urls')) #might not be right address
 ]
 

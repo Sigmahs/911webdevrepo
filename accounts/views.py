@@ -21,34 +21,36 @@ def signup_view(request):
             #sendConfirm(user)
             #return redirect("/accounts/confirm-email")
             return redirect("/home")
-        else: 
+        else:
             for error in form.errors.values():
                 messages.error(request, error)
-            return redirect("/accounts/signup") 
+            return redirect("/accounts/signup")
     else:
         return render(request, "accounts/signup.html")
 
 def login_view(request):
-    if request.user.is_authenticated:
-        return redirect("/home")
-    if request.method == "POST":
-        form = AuthenticationForm(data=request.POST)
-        username = request.POST['username']
-        password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            login(request, user)
-            if user.is_active == False:
-                return redirect("/accounts/confirm-email")
-            if "next" in request.POST:
-                return redirect("/home")
-            else: 
-                return redirect("/home")
-        else:
-            messages.error(request, 'Invalid Username/Password!')
-    else:
-        form = AuthenticationForm()
-    return render(request, "accounts/login.html", { "form": form })
+
+    # if request.user.is_authenticated:
+    #     return redirect("/home")
+    # if request.method == "POST":
+    #     form = AuthenticationForm(data=request.POST)
+    #     username = request.POST['username']
+    #     password = request.POST['password']
+    #     user = authenticate(request, username=username, password=password)
+    #     if user is not None:
+    #         login(request, user)
+    #         if user.is_active == False:
+    #             return redirect("/accounts/confirm-email")
+    #         if "next" in request.POST:
+    #             return redirect("/home")
+    #         else:
+    #             return redirect("/home")
+    #     else:
+    #         messages.error(request, 'Invalid Username/Password!')
+    # else:
+    form = AuthenticationForm()
+
+    return render(request, "accounts/login_base.html", { "form": form })
 
 
 def logout_view(request):
