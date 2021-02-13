@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+div.container {
+background-color: #ffffff;
+}
+#project{
+font-family: Arial;
+font-size: 22px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+color: #00a69c;
+background-color: #ffffff;
+}
+#m{
+font-family: Arial;
+font-size: 24px;
+font-style: normal;
+font-weight: bold;
+text-decoration: none;
+text-transform: uppercase;
+color: #e10078;
+background-color: #ffffff;
+}
+
+
+#message{
+    display:grid;
+    height: 500px;
+    width: 60%;
+    {% comment %} border: 1px pink solid; {% endcomment %}
+    float: left;
+    margin-left: 5%;
+   
+    
+}
+
+.words{
+    font:'Open Sans';
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #333333;
+
+}
+
+.click {
+    height: 50px; 
+    width: 250px; 
+    background-color: #00A69C;
+    border-radius: 5px; 
+    border: 1px solid #00A69C;
+    font:'Open Sans';
+    font-size: 20px;
+    color: white;
+
+}
+
+</style>
+</head>
+<body>
+  
+<div class="container" id ="message" style="margin-top:5%;">
+  <div class = "words">
+        Welcome to 
+<span id="project">Project</span> <span id="m">M</span>. 
+Please click the button below to confirm your email address and activate your account.
+  </div>
+  <a href="{{link}}"><button class = "click"> Confirm your account</button></a>
+   <div class = "words">
+        If the button does not work, copy and paste the following link into your browsers search bar:<br>
+        {{ link }}
+  </div>
+  <div class = "words"> Project M Team </div>
+</div>
+  
+</body>
+</html> 

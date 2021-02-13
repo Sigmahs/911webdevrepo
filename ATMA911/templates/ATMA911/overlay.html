@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	html{overflow: hidden;
+		border-style: none;}
+</style>
+<body>
+
+
+<canvas id="face_tracker" style=' 
+               margin:0; padding:0; 
+               position:absolute; 
+               top:0; left:0; '></canvas>
+
+</body>
+<script type="text/javascript">
+	function init() {
+                var canvasBG = document.getElementById("face_tracker");
+                
+
+                canvasBG.width = window.innerWidth;
+                canvasBG.height = window.innerHeight;
+                var x = {{left}};
+	var y = {{up}};
+	var width = {{width}};
+	var height = {{height}};
+	var ctx = document.getElementById('face_tracker').getContext('2d');
+	ctx.strokeStyle = 'green';
+	ctx.lineWidth = 5;;
+	ctx.strokeRect(x,y,width, height);
+	
+            }
+
+            window.onload = init;
+
+
+	
+</script>
