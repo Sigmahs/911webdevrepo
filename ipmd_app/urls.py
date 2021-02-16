@@ -15,7 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from emotions import views
+
+from atma import views
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import re_path
@@ -45,7 +46,11 @@ urlpatterns = [
     path('userVideo', views.userVideo),
     re_path(r'^submit/$', views.submit, name='submit'),
     path('email/', include(mail_urls)),
-    path('', include('django.contrib.auth.urls')) #might not be right address
+    path('', include('django.contrib.auth.urls')), #might not be right address
+    path('forgot_password', views.forgot),
+    #path('', include('social.apps.django_app.urls', namespace='social')),
+    path('accounts/', include('allauth.urls')),
+    path('', TemplateView.as_view(template_name='social_app/index.html')), # <--
 ]
 
 
