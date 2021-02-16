@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'allauth.account',   # <--
     'allauth.socialaccount',   # <--
     'allauth.socialaccount.providers.google',
-    'django.contrib.sites',git
+    'django.contrib.sites',
 ]
 
 AUTHENTICATION_BACKENDS = [

@@ -13,7 +13,7 @@ def signup_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             email=form.cleaned_data["email"]
-            user =  User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],last_name=form.cleaned_data['last_name'], password=form.cleaned_data['password1'], email=email)
+            user = User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],last_name=form.cleaned_data['last_name'], password=form.cleaned_data['password1'], email=email)
             user.is_active = True
             user.save()
             login(request, user)
@@ -30,26 +30,25 @@ def signup_view(request):
 
 def login_view(request):
 
-    # if request.user.is_authenticated:
-    #     return redirect("/home")
-    # if request.method == "POST":
-    #     form = AuthenticationForm(data=request.POST)
-    #     username = request.POST['username']
-    #     password = request.POST['password']
-    #     user = authenticate(request, username=username, password=password)
-    #     if user is not None:
-    #         login(request, user)
-    #         if user.is_active == False:
-    #             return redirect("/accounts/confirm-email")
-    #         if "next" in request.POST:
-    #             return redirect("/home")
-    #         else:
-    #             return redirect("/home")
-    #     else:
-    #         messages.error(request, 'Invalid Username/Password!')
-    # else:
-    form = AuthenticationForm()
-
+    if request.user.is_authenticated:
+        return redirect("/home")
+    if request.method == "POST":
+        form = AuthenticationForm(data=request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            if user.is_active == False:
+                return redirect("/accounts/confirm-email")
+            if "next" in request.POST:
+                return redirect("/home")
+            else:
+                return redirect("/home")
+        else:
+            messages.error(request, 'Invalid Username/Password!')
+    else:
+        form = AuthenticationForm()
     return render(request, "accounts/login_base.html", { "form": form })
 
 

@@ -7,41 +7,10 @@
         --BrowseFile_Background_LightGrey: #eceff2;
     }
 
-    @media screen and (max-width: 11680px) {
-
-        .container {
-            width: calc(50%);
-        }
-
-    }
-
-    @media screen and (max-width: 1280px) {
-
-        .container {
-            width: calc(50% - 60px);
-        }
-
-    }
-
-    @media screen and (max-width: 980px) {
-
-        .container {
-            width: calc(100% - 80px);
-        }
-
-    }
-
-    @media screen and (max-width: 736px) {
-
-        .container {
-            width: calc(100% - 40px);
-        }
-
-    }
 
   .Log-in2nd-version {
-      width: 63%;
-      height: 100%;
+      width: 40%;
+      height: auto;
       padding: 124px 200px 137px 522px;
       border-radius: 15px;
       background-color: var(--Background_White);
@@ -497,7 +466,7 @@
 
     .submit {
       cursor: pointer;
-      width:62%;
+      width:72%;
         border-radius: 5em;
         color: #fff;
         background: linear-gradient(to right,  var(--PrimaryButton_Blue), #a3bcff);
