@@ -13,7 +13,7 @@ def signup_view(request):
         form = RegisterForm(request.POST)
         if form.is_valid():
             email=form.cleaned_data["email"]
-            user =  User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],last_name=form.cleaned_data['last_name'], password=form.cleaned_data['password1'], email=email)
+            user = User.objects.create_user(username=form.cleaned_data['username'], first_name=form.cleaned_data['first_name'],last_name=form.cleaned_data['last_name'], password=form.cleaned_data['password1'], email=email)
             user.is_active = True
             user.save()
             login(request, user)
@@ -21,14 +21,15 @@ def signup_view(request):
             #sendConfirm(user)
             #return redirect("/accounts/confirm-email")
             return redirect("/home")
-        else: 
+        else:
             for error in form.errors.values():
                 messages.error(request, error)
-            return redirect("/accounts/signup") 
+            return redirect("/accounts/signup")
     else:
         return render(request, "accounts/signup.html")
 
 def login_view(request):
+
     if request.user.is_authenticated:
         return redirect("/home")
     if request.method == "POST":
@@ -42,13 +43,13 @@ def login_view(request):
                 return redirect("/accounts/confirm-email")
             if "next" in request.POST:
                 return redirect("/home")
-            else: 
+            else:
                 return redirect("/home")
         else:
             messages.error(request, 'Invalid Username/Password!')
     else:
         form = AuthenticationForm()
-    return render(request, "accounts/login.html", { "form": form })
+    return render(request, "accounts/login_base.html", { "form": form })
 
 
 def logout_view(request):

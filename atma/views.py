@@ -21,15 +21,15 @@ import json
 import operator
 import boto3
 import io
-import sagemaker #ask Erik
+#import sagemaker #ask Erik
 
 import glob
 import os
 import re
 from shutil import rmtree
 
-from emotions.models import Document, PictureSubmission, VideoSubmission, Thread, Comment, PictureUser, VideoUser
-from emotions.forms import DocumentForm, ThreadForm, CommentForm, UserVideoForm
+from atma.models import Document, PictureSubmission, VideoSubmission, Thread, Comment, PictureUser, VideoUser
+from atma.forms import DocumentForm, ThreadForm, CommentForm, UserVideoForm
 
 
 from tempfile import TemporaryFile
@@ -45,11 +45,11 @@ def save_img(image_bytes, object_name):
 
     # Upload the file
     s3_client = boto3.client('s3', region_name='us-east-2',
-                             aws_access_key_id='AKIATIGBJSAAQH6C3RHY',
-                             aws_secret_access_key= "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")
+                             aws_access_key_id='AKIAQFEAV2W63TXCMCH3',
+                             aws_secret_access_key= "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")
     try:
         out_img = io.BytesIO(image_bytes)
-        s3_client.upload_fileobj(out_img,'atma911web', object_name)
+        s3_client.upload_fileobj(out_img,'atma-website-storage', object_name)
 
         print("upload succeed!")
     except:
@@ -79,6 +79,7 @@ def get_aws_prediction(content):
     print("payload")
     print(payload)
     print(len(payload))
+    #ask daniel
     response = client.invoke_endpoint(EndpointName=endpoint_name,
                                       Body=json.dumps(payload))
     response_body = response['Body']
@@ -129,17 +130,17 @@ def home(request):
         firstTime = True
 
     if user.is_active:
-        return render(request, 'emotions/home.html', {"firstTime": firstTime})
+        return render(request, 'atma/home.html', {"firstTime": firstTime})
     else:
         return redirect("/accounts/confirm-email")
 
 @xframe_options_exempt
 def results(request):
-    return render(request, 'emotions/results.html')
+    return render(request, 'atma/results.html')
 
 
 def video(request):
-    return render(request, 'emotions/video.html')
+    return render(request, 'atma/video.html')
 
 
 @csrf_exempt
@@ -168,7 +169,7 @@ def submit(request):
     pic_user.TimesUsedToday +=1
     pic_user.save()
     if subs >= 5 and not (user.is_superuser):
-        return render(request,'emotions/fail2.html')
+        return render(request,'atma/fail2.html')
 
 
     if request.method == 'POST' :
@@ -298,7 +299,7 @@ def submit(request):
 
     if scores == [] :
         posted["success"] = 0
-    return render(request,'emotions/results.html' ,{"posted":posted});
+    return render(request,'atma/results.html' ,{"posted":posted});
 
 @csrf_exempt
 def faceTracker(request):
@@ -306,19 +307,19 @@ def faceTracker(request):
         repeat = request.POST['repeat']
         avatar = request.FILES['avatar']
     else:
-        return render(request,'emotions/video.html');
+        return render(request,'atma/video.html');
 
 
     left, up, width, height = image_shown_tracker(avatar.file.getvalue(), repeat)
-    return render(request, 'emotions/overlay.html',{'left':left,'up':up,'width':width,'height':height})
+    return render(request, 'atma/overlay.html',{'left':left,'up':up,'width':width,'height':height})
 
 
 
 def overlay(request):
-    return render(request, 'emotions/overlay.html');
+    return render(request, 'atma/overlay.html');
 
 def results_overlay(request):
-    return render(request, 'emotions/results_overlay.html');
+    return render(request, 'atma/results_overlay.html');
 
 
 import sys
@@ -340,7 +341,7 @@ def get_prediction(content, project_id, model_id):
 def videosubmit(request):
 
     if request.POST['limit_reached'] == 'true' :
-        return render(request, 'emotions/fail2.html')
+        return render(request, 'atma/fail2.html')
 
     if request.method == 'POST' and request.POST['end'] == 'false':
         repeat = request.POST['repeat']
@@ -351,7 +352,7 @@ def videosubmit(request):
         username = get_user(request)
         submission = VideoSubmission(User=username,Date=datetime.date.today())
         submission.save()
-        return render(request,'emotions/fail2.html')
+        return render(request,'atma/fail2.html')
 
 # Convert_Single_Img
     try:
@@ -362,7 +363,7 @@ def videosubmit(request):
         for i in test_img_data:
             faces.append(i.reshape(200,200))
     except:
-        return render(request,'emotions/fail.html')
+        return render(request,'atma/fail.html')
 
     all_data = []
     for each_face in faces:
@@ -390,9 +391,9 @@ def videosubmit(request):
         pos = ensemble_prob.index(max(ensemble_prob))
         major_value = labels[pos] +":  " +str(max(ensemble_prob))
         posted['major_value'] = major_value
-        return render(request,'emotions/results_overlay.html',{'posted': posted})
+        return render(request,'atma/results_overlay.html',{'posted': posted})
     except:
-        return render(request,'emotions/fail2.html')
+        return render(request,'atma/fail2.html')
 
 @csrf_exempt
 def videolimit(request):
@@ -441,7 +442,7 @@ def forum(request):
     data2 = serialize('json', comms)
     comms = json.loads(data2)
 
-    return render(request, 'emotions/forum.html', {'threads': threads, 'threadForm':threadForm, 'commentForm': commentForm, 'comments':comms})
+    return render(request, 'atma/forum.html', {'threads': threads, 'threadForm':threadForm, 'commentForm': commentForm, 'comments':comms})
 
 @login_required
 def delete_thread(request, pk):
@@ -467,7 +468,7 @@ def comments(request,thread_id):
     threads = json.loads(data)
     comms = Comment.objects.all()
     comms = serialize('json', comms)
-    return render(request, 'emotions/forum.html', {'threads': threads, 'threadForm':threadForm, 'commentForm': commentForm, 'comments':comms})
+    return render(request, 'atma/forum.html', {'threads': threads, 'threadForm':threadForm, 'commentForm': commentForm, 'comments':comms})
 
 
 @csrf_exempt
@@ -486,4 +487,9 @@ def userVideo(request):
             data["video_src"] = tracked_video
     form = UserVideoForm()
     data["form"] = form
-    return render(request,'emotions/userVideo.html',data)
+    return render(request,'atma/userVideo.html',data)
+
+def forgot(request):
+    #Must CHANGE THIS
+    context = {}
+    return render(request, 'atma/forgot_password_01.html', context)
